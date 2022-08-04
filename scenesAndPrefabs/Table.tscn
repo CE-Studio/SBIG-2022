@@ -237,6 +237,7 @@ shadow_mesh = SubResource("ArrayMesh_u1a31")
 size = Vector3(2.50529, 0.613617, 1.2555)
 
 [node name="Table" type="RigidDynamicBody3D"]
+mass = 0.2
 
 [node name="cube" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_33o03")
