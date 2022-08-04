@@ -29,12 +29,13 @@ sky = SubResource("Sky_8fagw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42279, 0, 0)
 
 [node name="Glass" parent="." instance=ExtResource("2_g1ryf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44527, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.874199, 0.203106, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_v38gp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89064, 1, 0)
 
 [node name="Table" parent="." instance=ExtResource("4_6ifax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000239849, -0.474213, -0.00172997)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -1, 0)
