@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://yjxe7thi5qpy"]
+[gd_scene load_steps=36 format=3 uid="uid://yjxe7thi5qpy"]
 
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_2jsps"]
 [ext_resource type="Material" uid="uid://cy30ffu1i5cop" path="res://textures/playmat.tres" id="1_6tk4v"]
 [ext_resource type="Texture2D" uid="uid://dw6j8f6p1d6eb" path="res://textures/Z.png" id="2_dpq5t"]
 
@@ -389,6 +390,7 @@ size = Vector3(0.879406, 1, 0.505887)
 [node name="Player" type="RigidDynamicBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 can_sleep = false
+script = ExtResource("1_2jsps")
 
 [node name="cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

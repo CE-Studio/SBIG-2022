@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkll0pyticy4a"]
+[gd_scene load_steps=11 format=3 uid="uid://dkll0pyticy4a"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
 [ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="3_v38gp"]
 [ext_resource type="PackedScene" uid="uid://brcm6n6jdi6l7" path="res://scenesAndPrefabs/Table.tscn" id="4_6ifax"]
+[ext_resource type="Script" path="res://Scripts/campoint.gd" id="5_rwclk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -44,12 +45,16 @@ mesh = SubResource("BoxMesh_tdral")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_sp6bc")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 4.265e-08, -7.63133e-08, 0, 0.872922, 0.48786, 8.74228e-08, 0.48786, -0.872922, -1.012, 3.423, -7.375)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.958972, -0.190148, 0.210279, -0.262813, -0.318106, 0.910899, -0.106315, -0.928791, -0.355028, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_irw53")
+
+[node name="campoint" type="Node3D" parent="."]
+transform = Transform3D(0.987136, 0, 0.159881, 0, 1, 0, -0.159881, 0, 0.987136, 0, 0, 0)
+script = ExtResource("5_rwclk")
+
+[node name="Camera3D" type="Camera3D" parent="campoint"]
+transform = Transform3D(-1, 7.36648e-08, -1.31808e-07, 0, 0.872922, 0.48786, 1.50996e-07, 0.48786, -0.872922, -1.012, 3.423, -7.375)
