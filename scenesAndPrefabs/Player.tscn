@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://yjxe7thi5qpy"]
+[gd_scene load_steps=35 format=3 uid="uid://yjxe7thi5qpy"]
 
 [ext_resource type="Material" uid="uid://cy30ffu1i5cop" path="res://textures/playmat.tres" id="1_6tk4v"]
+[ext_resource type="Texture2D" uid="uid://dw6j8f6p1d6eb" path="res://textures/Z.png" id="2_dpq5t"]
 
 [sub_resource type="Image" id="Image_4n3n8"]
 data = {
@@ -362,11 +363,32 @@ shadow_mesh = SubResource("ArrayMesh_p3qav")
 [sub_resource type="BoxShape3D" id="BoxShape3D_1mik2"]
 size = Vector3(0.375, 0.375, 0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62yf7"]
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_dpq5t")
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_87trg"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -3.0
+initial_velocity_max = 3.0
+tangential_accel_max = 8.0
+scale_min = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_btycj"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3v6im"]
 size = Vector3(0.879406, 1, 0.505887)
 
 [node name="Player" type="RigidDynamicBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+can_sleep = false
 
 [node name="cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -523,6 +545,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/RigidDynamicBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.188, -0.188)
 shape = SubResource("BoxShape3D_1mik2")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Head/RigidDynamicBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182074, -0.182074)
+material_override = SubResource("StandardMaterial3D_62yf7")
+lifetime = 3.63
+process_material = SubResource("ParticlesMaterial_87trg")
+draw_pass_1 = SubResource("PlaneMesh_btycj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_3v6im")
