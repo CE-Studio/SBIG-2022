@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkll0pyticy4a"]
+
+[ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
+[ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
+[ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="3_v38gp"]
+[ext_resource type="PackedScene" uid="uid://brcm6n6jdi6l7" path="res://scenesAndPrefabs/Table.tscn" id="4_6ifax"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Bed" parent="." instance=ExtResource("1_xkyx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42279, 0, 0)
+
+[node name="Glass" parent="." instance=ExtResource("2_g1ryf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44527, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_v38gp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89064, 1, 0)
+
+[node name="Table" parent="." instance=ExtResource("4_6ifax")]
