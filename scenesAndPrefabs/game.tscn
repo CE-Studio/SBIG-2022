@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkll0pyticy4a"]
+[gd_scene load_steps=12 format=3 uid="uid://dkll0pyticy4a"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
 [ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="3_v38gp"]
 [ext_resource type="PackedScene" uid="uid://brcm6n6jdi6l7" path="res://scenesAndPrefabs/Table.tscn" id="4_6ifax"]
 [ext_resource type="Script" path="res://Scripts/campoint.gd" id="5_rwclk"]
+[ext_resource type="PackedScene" uid="uid://dgg7whyqfrja1" path="res://scenesAndPrefabs/soda pickup.tscn" id="6_ffn23"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -26,7 +27,7 @@ sky = SubResource("Sky_8fagw")
 [node name="Node3D" type="Node3D"]
 
 [node name="Bed" parent="." instance=ExtResource("1_xkyx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42279, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42279, -0.503838, 0)
 
 [node name="Glass" parent="." instance=ExtResource("2_g1ryf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.874199, 0.203106, 0)
@@ -59,3 +60,6 @@ script = ExtResource("5_rwclk")
 
 [node name="Camera3D" type="Camera3D" parent="campoint"]
 transform = Transform3D(-1, 7.36648e-08, -1.31808e-07, 0, 0.872922, 0.48786, 1.50996e-07, 0.48786, -0.872922, -1.012, 3.423, -7.375)
+
+[node name="soda pickup" parent="." instance=ExtResource("6_ffn23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -6)
