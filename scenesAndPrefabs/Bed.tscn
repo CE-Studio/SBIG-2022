@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dduvtl0m7qs3w"]
+[gd_scene load_steps=25 format=3 uid="uid://dduvtl0m7qs3w"]
 
 [ext_resource type="Material" uid="uid://cxkwtx4ghat75" path="res://textures/bedMat.tres" id="1_vqgyh"]
 [ext_resource type="Script" path="res://Scripts/playerOnBed.gd" id="2_0b7u0"]
@@ -210,6 +210,36 @@ size = Vector3(1.49958, 0.683422, 2.49266)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjeot"]
 size = Vector3(0.811057, 0.592418, 1.55392)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urcg7"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.443137)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy = 5.0
+
+[sub_resource type="Curve" id="Curve_gdibx"]
+_data = [Vector2(0.462963, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.42584, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rx1vg"]
+curve = SubResource("Curve_gdibx")
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_ooeu6"]
+lifetime_randomness = 0.5
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+linear_accel_min = -5.0
+linear_accel_max = -5.0
+scale_min = 0.06
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_rx1vg")
+color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1mnmw"]
+
 [node name="Bed" type="StaticBody3D"]
 
 [node name="cube" type="MeshInstance3D" parent="."]
@@ -252,3 +282,11 @@ script = ExtResource("2_0b7u0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.897111, 0)
 shape = SubResource("BoxShape3D_kjeot")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+material_override = SubResource("StandardMaterial3D_urcg7")
+amount = 64
+explosiveness = 1.0
+process_material = SubResource("ParticlesMaterial_ooeu6")
+draw_pass_1 = SubResource("SphereMesh_1mnmw")
