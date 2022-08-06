@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3gfnweq6lc55"
+path="res://.godot/imported/SideTable.obj-f5396202c0a4c764d493dab675ebe587.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SideTable.obj-f5396202c0a4c764d493dab675ebe587.mesh"]
+
+source_file="res://models/SideTable.obj"
+dest_files=["res://.godot/imported/SideTable.obj-f5396202c0a4c764d493dab675ebe587.mesh", "res://.godot/imported/SideTable.obj-f5396202c0a4c764d493dab675ebe587.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
