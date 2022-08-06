@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dkll0pyticy4a"]
+[gd_scene load_steps=15 format=3 uid="uid://dkll0pyticy4a"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brcm6n6jdi6l7" path="res://scenesAndPrefabs/Table.tscn" id="4_6ifax"]
 [ext_resource type="Script" path="res://Scripts/campoint.gd" id="5_rwclk"]
 [ext_resource type="PackedScene" uid="uid://dgg7whyqfrja1" path="res://scenesAndPrefabs/soda pickup.tscn" id="6_ffn23"]
+[ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_jmb04"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -23,6 +24,14 @@ sky_material = SubResource("PhysicalSkyMaterial_ehxhj")
 [sub_resource type="Environment" id="Environment_irw53"]
 background_mode = 2
 sky = SubResource("Sky_8fagw")
+
+[sub_resource type="Animation" id="Animation_8igdl"]
+resource_name = "LC_InFromLeft"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlfdp"]
+_data = {
+"LC_InFromLeft": SubResource("Animation_8igdl")
+}
 
 [node name="Node3D" type="Node3D"]
 
@@ -63,3 +72,23 @@ transform = Transform3D(-1, 7.36648e-08, -1.31808e-07, 0, 0.872922, 0.48786, 1.5
 
 [node name="soda pickup" parent="." instance=ExtResource("6_ffn23")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_jlfdp")
+}
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+anchor_left = 0.016
+anchor_top = 0.028
+anchor_right = 0.98
+anchor_bottom = 0.968
+offset_left = 63.616
+offset_top = 142.2
+offset_right = -64.52
+offset_bottom = -142.8
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jmb04")
+metadata/_edit_use_custom_anchors = true
