@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2budnwsaryht"]
+[gd_scene load_steps=5 format=3 uid="uid://ciierwgvddicp"]
 
-[ext_resource type="Material" uid="uid://b8ys7e2eu75sk" path="res://textures/wallMat.tres" id="1_glh7q"]
+[ext_resource type="Material" uid="uid://b8ys7e2eu75sk" path="res://textures/wallMat0.tres" id="1_glh7q"]
 [ext_resource type="ArrayMesh" uid="uid://c442q1jfhaxag" path="res://models/Wall.obj" id="2_rlwmb"]
+[ext_resource type="Script" path="res://Scripts/wallRetexture.gd" id="3_pvc6l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0u67"]
 size = Vector3(1, 4.12043, 0.119877)
@@ -11,6 +12,7 @@ size = Vector3(1, 4.12043, 0.119877)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_glh7q")
 mesh = ExtResource("2_rlwmb")
+script = ExtResource("3_pvc6l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96013, 0)

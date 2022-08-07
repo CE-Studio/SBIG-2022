@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddex1vq654tas"]
+[gd_scene load_steps=4 format=3 uid="uid://ddex1vq654tas"]
 
 [ext_resource type="Material" uid="uid://bdq52o4y73dnw" path="res://textures/windowMat.tres" id="1_e288w"]
 [ext_resource type="ArrayMesh" uid="uid://dbqa48aiflt47" path="res://models/Window.obj" id="2_w2rrw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0u67"]
+size = Vector3(2.01342, 4.12043, 0.119877)
 
 [node name="wallWithWindow" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_e288w")
 mesh = ExtResource("2_w2rrw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96013, 0)
+shape = SubResource("BoxShape3D_p0u67")
