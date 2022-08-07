@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkll0pyticy4a"]
+[gd_scene load_steps=21 format=3 uid="uid://dkll0pyticy4a"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/campoint.gd" id="5_rwclk"]
 [ext_resource type="PackedScene" uid="uid://dgg7whyqfrja1" path="res://scenesAndPrefabs/soda pickup.tscn" id="6_ffn23"]
 [ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_jmb04"]
+[ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="8_uu6oc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -25,6 +26,21 @@ sky_material = SubResource("PhysicalSkyMaterial_ehxhj")
 background_mode = 2
 sky = SubResource("Sky_8fagw")
 
+[sub_resource type="Animation" id="Animation_8tie7"]
+resource_name = "LC_InFromBottom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(143, 659), Vector2(143, 159)]
+}
+
 [sub_resource type="Animation" id="Animation_8igdl"]
 resource_name = "LC_InFromLeft"
 tracks/0/type = "value"
@@ -38,6 +54,63 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-857, 159), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_wq3rl"]
+resource_name = "LC_InFromRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1143, 159), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_gfg2n"]
+resource_name = "LC_InFromTop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(143, -341), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_36l7p"]
+resource_name = "LC_SpinFadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.28319, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_003fp"]
@@ -89,78 +162,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(367, 139.5)]
-}
-
-[sub_resource type="Animation" id="Animation_wq3rl"]
-resource_name = "LC_InFromRight"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1143, 159), Vector2(143, 159)]
-}
-
-[sub_resource type="Animation" id="Animation_gfg2n"]
-resource_name = "LC_InFromTop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(143, -341), Vector2(143, 159)]
-}
-
-[sub_resource type="Animation" id="Animation_8tie7"]
-resource_name = "LC_InFromBottom"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(143, 659), Vector2(143, 159)]
-}
-
-[sub_resource type="Animation" id="Animation_36l7p"]
-resource_name = "LC_SpinFadeIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.28319, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jlfdp"]
@@ -233,3 +234,6 @@ grow_vertical = 2
 pivot_offset = Vector2(367, 139.5)
 texture = ExtResource("7_jmb04")
 metadata/_edit_use_custom_anchors = true
+
+[node name="wall" parent="." instance=ExtResource("8_uu6oc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.81172, 0, 0)
