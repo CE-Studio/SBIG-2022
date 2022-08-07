@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddex1vq654tas"]
+
+[ext_resource type="Material" uid="uid://bdq52o4y73dnw" path="res://textures/windowMat.tres" id="1_e288w"]
+[ext_resource type="ArrayMesh" uid="uid://dbqa48aiflt47" path="res://models/Window.obj" id="2_w2rrw"]
+
+[node name="wallWithWindow" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_e288w")
+mesh = ExtResource("2_w2rrw")
