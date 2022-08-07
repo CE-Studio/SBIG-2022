@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkmrvfpslbog4"]
+
+[ext_resource type="ArrayMesh" uid="uid://c4triwqa1onvr" path="res://models/FloorTile.obj" id="1_gq6to"]
+[ext_resource type="Script" path="res://Scripts/floorRetexture.gd" id="2_34m3e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufafs"]
+size = Vector3(1, 0.124251, 1)
+
+[node name="floor" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_gq6to")
+script = ExtResource("2_34m3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ufafs")

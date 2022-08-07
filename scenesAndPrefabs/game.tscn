@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dkll0pyticy4a"]
+[gd_scene load_steps=22 format=3 uid="uid://dkll0pyticy4a"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgg7whyqfrja1" path="res://scenesAndPrefabs/soda pickup.tscn" id="6_ffn23"]
 [ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_jmb04"]
 [ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="8_uu6oc"]
+[ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="9_5h2x2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -237,3 +238,6 @@ metadata/_edit_use_custom_anchors = true
 
 [node name="wall" parent="." instance=ExtResource("8_uu6oc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.81172, 0, 0)
+
+[node name="floor" parent="." instance=ExtResource("9_5h2x2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1652, 0, 0)

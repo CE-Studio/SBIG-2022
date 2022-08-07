@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pgqwo21f0i6e"
-path="res://.godot/imported/PictureTexture_Meme.png-3b2f15d5aaf3442ad289c33774eafa5f.ctex"
+uid="uid://dejl4df26mgvr"
+path="res://.godot/imported/FloorTexture_TileBlue.png-3ab13e4c1b65f878cc9d30c3a6d9ac0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/PictureTexture_Meme.png"
-dest_files=["res://.godot/imported/PictureTexture_Meme.png-3b2f15d5aaf3442ad289c33774eafa5f.ctex"]
+source_file="res://textures/floors/FloorTexture_TileBlue.png"
+dest_files=["res://.godot/imported/FloorTexture_TileBlue.png-3ab13e4c1b65f878cc9d30c3a6d9ac0f.ctex"]
 
 [params]
 

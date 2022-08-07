@@ -29,6 +29,12 @@ config/icon="res://icon.png"
 
 GameManager="*res://Scripts/game_manager.gd"
 
+[importer_defaults]
+
+texture={
+"detect_3d/compress_to": 0
+}
+
 [input]
 
 ui_left={
