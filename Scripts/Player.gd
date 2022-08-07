@@ -10,8 +10,8 @@ const TORQUE := 45
 func _ready():
     manager = $"/root/GameManager"
     print(get_tree().current_scene.name)
-    if get_tree().current_scene.name == "game":
-        manager.load_level_direct(manager.LVLID_LEVELOFFSET)
+    #if get_tree().current_scene.name == "game":
+    #    manager.load_level_direct(manager.LVLID_LEVELOFFSET)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
