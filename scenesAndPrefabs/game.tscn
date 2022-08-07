@@ -238,10 +238,10 @@ anchor_left = 0.016
 anchor_top = 0.028
 anchor_right = 0.98
 anchor_bottom = 0.968
-offset_left = 126.616
-offset_top = 142.2
-offset_right = -126.52
-offset_bottom = -142.8
+offset_left = 143.0
+offset_top = 159.0
+offset_right = 877.0
+offset_bottom = 438.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(367, 139.5)
@@ -253,16 +253,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.81172, 0, 0)
 
 [node name="floor" parent="." instance=ExtResource("9_5h2x2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1652, 0, 0)
-
-[node name="sleepyMeter" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = 255.0
-offset_right = -371.0
-offset_bottom = 288.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "100/100 sleepy"

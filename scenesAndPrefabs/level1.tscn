@@ -190,7 +190,7 @@ transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3)
 
 [node name="wall2" parent="." instance=ExtResource("1_6l0l3")]
-transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.53734)
 visible = false
 
 [node name="wall3" parent="." instance=ExtResource("1_6l0l3")]
@@ -403,7 +403,6 @@ shadow_enabled = true
 environment = SubResource("Environment_dvi5y")
 
 [node name="campoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("5_kqlv0")
 
 [node name="Camera3D" type="Camera3D" parent="campoint"]
@@ -432,16 +431,3 @@ grow_vertical = 2
 pivot_offset = Vector2(367, 139.5)
 texture = ExtResource("7_es6bq")
 metadata/_edit_use_custom_anchors = true
-
-[node name="sleepyMeter" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = 255.0
-offset_right = -371.0
-offset_bottom = 288.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "100/100 sleepy"

@@ -22,8 +22,11 @@ var prop_wakeup_table = {
 }
 
 func _ready():
-    sleepy_meter = $"sleepyMeter"
-    sleepy_meter.text = "" + current_sleep + "/" + SLEEP_LEVEL_MAX + " sleepy"
+    sleepy_meter = Label.new()
+    sleepy_meter.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+    sleepy_meter.position.y -= 20
+    add_child(sleepy_meter)
+    sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
     rng.randomize()
 
 func load_level_direct(id:int):
@@ -47,6 +50,6 @@ func decrease_sleep(prop:String):
     var trimmed_prop:String = prop.replace(".tscn", "").replace("_", "").to_lower()
     var this_range:Vector2i = prop_wakeup_table[trimmed_prop]
     current_sleep -= randi_range(this_range.x, this_range.y)
-    sleepyMeter.text = "" + current_sleep + "/" + SLEEP_LEVEL_MAX + " sleepy"
+    sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
     if current_sleep <= 0:
         pass # Game over code here
