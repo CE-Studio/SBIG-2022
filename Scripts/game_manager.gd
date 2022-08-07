@@ -1,17 +1,19 @@
 extends Node
 
-const LEVEL_LIST := [ "menu", "rundown", "level1", "level2", "level3" ]
-const FLOOR_TYPE := [0, 0, 0, 0, 0]
-const WALL__TYPE := [0, 0, 0, 0, 0]
-const LVLID_MENU := 0
-const LVLID_RUNDOWN := 1
-const LVLID_LEVELOFFSET := 2
+const LEVEL_LIST := [ "game", "menu", "rundown", "level1", "level2", "level3" ]
+const FLOOR_TYPE := [0, 0, 0, 0, 0, 0]
+const WALL__TYPE := [0, 0, 0, 0, 0, 0]
+const LVLID_MENU := 1
+const LVLID_RUNDOWN := 2
+const LVLID_LEVELOFFSET := 3
 const SLEEP_LEVEL_MAX := 100
 
 var current_level := LVLID_MENU
 var current_floor:int = FLOOR_TYPE[LVLID_MENU]
 var current_wall:int = WALL__TYPE[LVLID_MENU]
 var current_sleep := SLEEP_LEVEL_MAX
+
+var sleepy_meter:Label
 
 var rng := RandomNumberGenerator.new()
 
@@ -20,6 +22,8 @@ var prop_wakeup_table = {
 }
 
 func _ready():
+    sleepy_meter = $"sleepyMeter"
+    sleepy_meter.text = "" + current_sleep + "/" + SLEEP_LEVEL_MAX + " sleepy"
     rng.randomize()
 
 func load_level_direct(id:int):
@@ -43,5 +47,6 @@ func decrease_sleep(prop:String):
     var trimmed_prop:String = prop.replace(".tscn", "").replace("_", "").to_lower()
     var this_range:Vector2i = prop_wakeup_table[trimmed_prop]
     current_sleep -= randi_range(this_range.x, this_range.y)
+    sleepyMeter.text = "" + current_sleep + "/" + SLEEP_LEVEL_MAX + " sleepy"
     if current_sleep <= 0:
         pass # Game over code here

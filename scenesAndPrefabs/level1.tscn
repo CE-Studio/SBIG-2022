@@ -1,0 +1,447 @@
+[gd_scene load_steps=18 format=3 uid="uid://dcq4xkfwy6u3d"]
+
+[ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="1_6l0l3"]
+[ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="1_leghm"]
+[ext_resource type="PackedScene" uid="uid://ddex1vq654tas" path="res://scenesAndPrefabs/wallWithWindow.tscn" id="2_2mssq"]
+[ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="4_6ndax"]
+[ext_resource type="Script" path="res://Scripts/campoint.gd" id="5_kqlv0"]
+[ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="6_mng1u"]
+[ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_es6bq"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2ncy6"]
+rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
+mie_color = Color(0.576471, 0.756863, 0.858824, 1)
+ground_color = Color(0.2, 0.2, 0.2, 1)
+exposure = 0.2
+
+[sub_resource type="Sky" id="Sky_8fagw"]
+sky_material = SubResource("PhysicalSkyMaterial_2ncy6")
+
+[sub_resource type="Environment" id="Environment_dvi5y"]
+background_mode = 2
+sky = SubResource("Sky_8fagw")
+
+[sub_resource type="Animation" id="Animation_8tie7"]
+resource_name = "LC_InFromBottom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(143, 659), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_8igdl"]
+resource_name = "LC_InFromLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-857, 159), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_wq3rl"]
+resource_name = "LC_InFromRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1143, 159), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_gfg2n"]
+resource_name = "LC_InFromTop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(143, -341), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_36l7p"]
+resource_name = "LC_SpinFadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.28319, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_003fp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(143, 159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:pivot_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(367, 139.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(734, 279)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlfdp"]
+_data = {
+"LC_InFromBottom": SubResource("Animation_8tie7"),
+"LC_InFromLeft": SubResource("Animation_8igdl"),
+"LC_InFromRight": SubResource("Animation_wq3rl"),
+"LC_InFromTop": SubResource("Animation_gfg2n"),
+"LC_SpinFadeIn": SubResource("Animation_36l7p"),
+"RESET": SubResource("Animation_003fp")
+}
+
+[node name="level1" type="Node3D"]
+
+[node name="wall" parent="." instance=ExtResource("1_6l0l3")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="wall5" parent="." instance=ExtResource("1_6l0l3")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3)
+
+[node name="wall2" parent="." instance=ExtResource("1_6l0l3")]
+transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+visible = false
+
+[node name="wall3" parent="." instance=ExtResource("1_6l0l3")]
+transform = Transform3D(-3.0598e-07, 0, 1, 0, 1, 0, -7, 0, -4.37114e-08, -4, 0, 0)
+
+[node name="wall4" parent="." instance=ExtResource("1_6l0l3")]
+transform = Transform3D(-3.0598e-07, 0, 1, 0, 1, 0, -7, 0, -4.37114e-08, 4, 0, 0)
+
+[node name="wallWithWindow" parent="." instance=ExtResource("2_2mssq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3)
+
+[node name="FloorParent" type="Node" parent="."]
+
+[node name="floor" parent="FloorParent" instance=ExtResource("1_leghm")]
+
+[node name="floor2" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="floor3" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="floor4" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="floor5" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="floor6" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floor7" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="floor8" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="floor9" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="floor10" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="floor11" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="floor12" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="floor13" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+
+[node name="floor14" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
+
+[node name="floor15" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="floor16" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="floor17" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="floor18" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="floor19" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="floor20" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="floor21" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="floor22" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+
+[node name="floor23" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="floor24" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="floor25" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="floor26" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="floor27" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="floor28" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="floor29" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="floor30" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="floor31" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="floor32" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="floor33" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="floor34" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="floor35" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="floor36" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="floor37" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="floor38" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="floor39" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="floor40" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="floor41" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="floor42" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="floor43" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="floor44" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="floor45" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="floor46" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="floor47" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="floor48" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="floor49" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="floor50" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="floor51" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="floor52" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="floor53" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="floor54" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="floor55" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="floor56" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="floor57" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="floor58" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="floor59" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="floor60" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="floor61" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="floor62" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="floor63" parent="FloorParent" instance=ExtResource("1_leghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="Player" parent="." instance=ExtResource("4_6ndax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37784, 1.3283, -2.15422)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.958972, -0.190148, 0.210279, -0.262813, -0.318106, 0.910899, -0.106315, -0.928791, -0.355028, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dvi5y")
+
+[node name="campoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("5_kqlv0")
+
+[node name="Camera3D" type="Camera3D" parent="campoint"]
+transform = Transform3D(-1, 7.36648e-08, -1.31808e-07, 0, 0.872922, 0.48786, 1.50996e-07, 0.48786, -0.872922, -1.012, 3.423, -7.375)
+
+[node name="Bed" parent="." instance=ExtResource("6_mng1u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.52002, 0, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath(".")
+libraries = {
+"": SubResource("AnimationLibrary_jlfdp")
+}
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+anchor_left = 0.016
+anchor_top = 0.028
+anchor_right = 0.98
+anchor_bottom = 0.968
+offset_left = 126.616
+offset_top = 142.2
+offset_right = -126.52
+offset_bottom = -142.8
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(367, 139.5)
+texture = ExtResource("7_es6bq")
+metadata/_edit_use_custom_anchors = true
+
+[node name="sleepyMeter" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 255.0
+offset_right = -371.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100 sleepy"
