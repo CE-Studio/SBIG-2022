@@ -2,6 +2,7 @@ extends RigidDynamicBody3D
 
 var manager:GameManager
 var _has_hit_floor := false
+@export var myname:String
 
 func _ready():
     manager = $"/root/GameManager"
@@ -11,6 +12,6 @@ func _ready():
 #    pass
 
 func body_entered(body:Node3D):
-    if "floor" in body.name && !_has_hit_floor:
+    if ("floor" in body.name) && !_has_hit_floor:
         _has_hit_floor = true
-        manager.decrease_sleep(self.name)
+        manager.decrease_sleep(myname)

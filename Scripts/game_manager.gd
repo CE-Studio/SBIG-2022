@@ -19,7 +19,7 @@ var rng := RandomNumberGenerator.new()
 
 var prop_wakeup_table = {
     "glass": Vector2i(10, 30),
-    "fugure": Vector2i(5, 15)
+    "figure": Vector2i(5, 15)
 }
 
 func _ready():

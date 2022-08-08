@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkll0pyticy4a"]
+[gd_scene load_steps=24 format=3 uid="uid://bo08mg67auxp1"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="8_uu6oc"]
 [ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="9_5h2x2"]
 [ext_resource type="PackedScene" uid="uid://c8d56muunshg2" path="res://scenesAndPrefabs/launcher.tscn" id="10_31cu5"]
-[ext_resource type="PackedScene" uid="uid://dmyut8w0tkc57" path="res://scenesAndPrefabs/fugure.tscn" id="11_u8hwd"]
+[ext_resource type="PackedScene" uid="uid://dmyut8w0tkc57" path="res://scenesAndPrefabs/figure.tscn" id="11_u8hwd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -260,5 +260,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1652, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73227, -0.473947, 0)
 directionAndSrength = Vector3(0, 100, 100)
 
-[node name="fugure" parent="." instance=ExtResource("11_u8hwd")]
+[node name="figure" parent="." instance=ExtResource("11_u8hwd")]
 transform = Transform3D(0.859932, 0, -0.510408, 0, 1, 0, 0.510408, 0, 0.859932, -0.351397, 0.236102, -0.127613)

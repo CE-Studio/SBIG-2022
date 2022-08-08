@@ -7,9 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_cy2rn"]
 size = Vector3(0.256771, 0.630382, 0.376091)
 
-[node name="fugure" type="RigidDynamicBody3D"]
+[node name="figure" type="RigidDynamicBody3D"]
 mass = 0.2
+contacts_reported = 10
+contact_monitor = true
 script = ExtResource("1_gdn1c")
+myname = "figure"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_qt71i")
