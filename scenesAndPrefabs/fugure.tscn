@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmyut8w0tkc57"]
+[gd_scene load_steps=5 format=3 uid="uid://dmyut8w0tkc57"]
 
+[ext_resource type="Script" path="res://Scripts/prop_on_ground.gd" id="1_gdn1c"]
 [ext_resource type="Material" uid="uid://crajnpxnorggs" path="res://textures/figMat.tres" id="1_qt71i"]
 [ext_resource type="ArrayMesh" uid="uid://dpbpxxpqo31ws" path="res://models/Figure.obj" id="2_4x3h0"]
 
@@ -8,6 +9,7 @@ size = Vector3(0.256771, 0.630382, 0.376091)
 
 [node name="fugure" type="RigidDynamicBody3D"]
 mass = 0.2
+script = ExtResource("1_gdn1c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_qt71i")
