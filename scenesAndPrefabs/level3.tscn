@@ -266,7 +266,7 @@ transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, -3, 42.5)
 
 [node name="launcher" parent="." instance=ExtResource("10_1igg4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0.0865246, 13)
-directionAndSrength = Vector3(-50, 100, 0)
+directionAndSrength = Vector3(-40, 100, 0)
 
 [node name="figure" parent="." instance=ExtResource("11_0ij8q")]
 transform = Transform3D(0.859932, 0, -0.510408, 0, 1, 0, 0.510408, 0, 0.859932, -0.351397, 0.635421, 3.86897)
