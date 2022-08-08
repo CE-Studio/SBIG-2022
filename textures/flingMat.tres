@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dquufmqo8jy1y"]
+
+[ext_resource type="Texture2D" uid="uid://3ky66bpfi1ct" path="res://textures/FlingTileTexture.png" id="1_34r5a"]
+
+[resource]
+albedo_texture = ExtResource("1_34r5a")
+texture_filter = 0
