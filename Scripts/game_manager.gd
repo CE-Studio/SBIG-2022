@@ -18,7 +18,8 @@ var sleepy_meter:Label
 var rng := RandomNumberGenerator.new()
 
 var prop_wakeup_table = {
-    "glass": Vector2i(5, 15)
+    "glass": Vector2i(10, 30),
+    "fugure": Vector2i(5, 15)
 }
 
 func _ready():
@@ -47,6 +48,7 @@ func max_sleep():
     current_sleep = SLEEP_LEVEL_MAX
 
 func decrease_sleep(prop:String):
+    print(prop)
     var trimmed_prop:String = prop.replace(".tscn", "").replace("_", "").to_lower()
     var this_range:Vector2i = prop_wakeup_table[trimmed_prop]
     current_sleep -= randi_range(this_range.x, this_range.y)
