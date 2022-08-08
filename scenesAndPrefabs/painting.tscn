@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckhxe488e2cns"]
+
+[ext_resource type="Material" uid="uid://lodcrjqh5a8d" path="res://textures/pics/paintMat0.tres" id="1_70vin"]
+[ext_resource type="ArrayMesh" uid="uid://dggaihl7m7ptb" path="res://models/Picture.obj" id="2_rssnw"]
+[ext_resource type="Script" path="res://Scripts/paintingRetexture.gd" id="3_v7x2g"]
+
+[node name="painting" type="MeshInstance3D"]
+material_override = ExtResource("1_70vin")
+mesh = ExtResource("2_rssnw")
+script = ExtResource("3_v7x2g")

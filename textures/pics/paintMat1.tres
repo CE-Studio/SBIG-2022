@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cuhexd7g3381x"]
+
+[ext_resource type="Texture2D" uid="uid://pgqwo21f0i6e" path="res://textures/pics/PictureTexture_Meme.png" id="1_yccv2"]
+
+[resource]
+albedo_texture = ExtResource("1_yccv2")
+texture_filter = 0
