@@ -6,6 +6,7 @@ var play:Player
 
 var timer := 5.0
 var launch := false
+@export var jettime:float
 
 var rng := RandomNumberGenerator.new()
 
@@ -25,7 +26,7 @@ func _physics_process(delta):
             play.axis_lock_angular_y = true
             play.axis_lock_angular_z = true
             play.apply_force(global_transform.basis.y * 100)
-            if timer <= -5:
+            if timer <= -jettime:
                 play.axis_lock_angular_x = false
                 play.axis_lock_angular_y = false
                 play.axis_lock_angular_z = false

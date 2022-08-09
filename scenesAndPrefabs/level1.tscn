@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcq4xkfwy6u3d"]
+[gd_scene load_steps=22 format=3 uid="uid://dcq4xkfwy6u3d"]
 
 [ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="1_6l0l3"]
 [ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="1_leghm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="6_mng1u"]
 [ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_es6bq"]
 [ext_resource type="PackedScene" uid="uid://ckhxe488e2cns" path="res://scenesAndPrefabs/painting.tscn" id="8_lye1v"]
+[ext_resource type="Texture2D" uid="uid://b4u28cwt27yd6" path="res://textures/wasd.png" id="9_g6upd"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2ncy6"]
 rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
@@ -181,6 +182,15 @@ _data = {
 "LC_SpinFadeIn": SubResource("Animation_36l7p"),
 "RESET": SubResource("Animation_003fp")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yt2no"]
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("9_g6upd")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_run5m"]
 
 [node name="level1" type="Node3D"]
 
@@ -439,3 +449,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65638, 1.39257, 2.95)
 
 [node name="painting2" parent="." instance=ExtResource("8_lye1v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69362, 2.38746, 2.95)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -0.295802, 0.0765436, -1.22765)
+material_override = SubResource("StandardMaterial3D_yt2no")
+mesh = SubResource("PlaneMesh_run5m")
