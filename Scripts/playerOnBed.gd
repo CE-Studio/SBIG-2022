@@ -16,15 +16,16 @@ var endLevelAnimNames := [ "LC_InFromLeft",
     "LC_SpinFadeIn" ]
 
 func _ready():
-    manager = $"/root/GameManager"
-    player = $"../../Player"
-    connect("body_entered", self.body_entered)
     particle = $"GPUParticles3D"
     particle.hide()
-    endLevelAnim = $"../../AnimationPlayer"
-    endLevelTexture = $"../../AnimationPlayer/TextureRect"
-    endLevelTexture.hide()
-    rng.randomize()
+    if get_tree().current_scene.name != "menu":
+        manager = $"/root/GameManager"
+        player = $"../../Player"
+        connect("body_entered", self.body_entered)
+        endLevelAnim = $"../../AnimationPlayer"
+        endLevelTexture = $"../../AnimationPlayer/TextureRect"
+        endLevelTexture.hide()
+        rng.randomize()
 
 func _process(delta):
     if endedLevel:

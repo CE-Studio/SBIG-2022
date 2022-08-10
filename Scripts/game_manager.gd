@@ -46,6 +46,7 @@ func reload_current_level():
 
 func max_sleep():
     current_sleep = SLEEP_LEVEL_MAX
+    sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
 
 func decrease_sleep(prop:String):
     print(prop)
