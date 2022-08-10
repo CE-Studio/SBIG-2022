@@ -22,12 +22,12 @@ mie_color = Color(0.576471, 0.756863, 0.858824, 1)
 ground_color = Color(0.2, 0.2, 0.2, 1)
 exposure = 0.2
 
-[sub_resource type="Sky" id="Sky_qf0hw"]
+[sub_resource type="Sky" id="Sky_sk4rs"]
 sky_material = SubResource("PhysicalSkyMaterial_ehxhj")
 
 [sub_resource type="Environment" id="Environment_irw53"]
 background_mode = 2
-sky = SubResource("Sky_qf0hw")
+sky = SubResource("Sky_sk4rs")
 
 [sub_resource type="Animation" id="Animation_8tie7"]
 resource_name = "LC_InFromBottom"

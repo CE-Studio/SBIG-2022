@@ -45,6 +45,7 @@ func reload_current_level():
     get_tree().change_scene("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn")
 
 func max_sleep():
+    print("Sleep maxed")
     current_sleep = SLEEP_LEVEL_MAX
 
 func decrease_sleep(prop:String):
