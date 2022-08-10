@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Sbig- 2022"
-run/main_scene="res://scenesAndPrefabs/game.tscn"
+run/main_scene="res://scenesAndPrefabs/menu.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
 

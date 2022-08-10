@@ -32,16 +32,21 @@ func _ready():
 
 func load_level_direct(id:int):
     current_level = id
+    print(get_stack())
+    print("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn loading directly")
     reload_current_level()
 
 func load_next_level():
     current_level += 1
+    print(current_level)
+    print("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn")
     reload_current_level()
 
 func reload_current_level():
     current_floor = FLOOR_TYPE[current_level]
     current_wall = WALL__TYPE[current_level]
     max_sleep()
+    print("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn loading")
     get_tree().change_scene("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn")
 
 func max_sleep():

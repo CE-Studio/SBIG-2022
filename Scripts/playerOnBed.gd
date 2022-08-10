@@ -18,14 +18,13 @@ var endLevelAnimNames := [ "LC_InFromLeft",
 func _ready():
     particle = $"GPUParticles3D"
     particle.hide()
-    if get_tree().current_scene.name != "menu":
-        manager = $"/root/GameManager"
-        player = $"../../Player"
-        connect("body_entered", self.body_entered)
-        endLevelAnim = $"../../AnimationPlayer"
-        endLevelTexture = $"../../AnimationPlayer/TextureRect"
-        endLevelTexture.hide()
-        rng.randomize()
+    manager = $"/root/GameManager"
+    player = $"../../Player"
+    connect("body_entered", self.body_entered)
+    endLevelAnim = $"../../AnimationPlayer"
+    endLevelTexture = $"../../AnimationPlayer/TextureRect"
+    endLevelTexture.hide()
+    rng.randomize()
 
 func _process(delta):
     if endedLevel:
@@ -34,6 +33,7 @@ func _process(delta):
             particle.hide()
         if particleTimer <= -1.0:
             manager.load_next_level()
+            particleTimer = 200
 
 func body_entered(body:Node3D):
     if body.name == "Player" && !endedLevel:
