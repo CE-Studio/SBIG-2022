@@ -14,6 +14,12 @@ var current_wall:int = WALL__TYPE[LVLID_MENU]
 var current_sleep := SLEEP_LEVEL_MAX
 
 var sleepy_meter:Label
+var is_game_over := false
+var game_over_resource:Resource = load("res://scenesAndPrefabs/GameOverPopup.tscn")
+var game_over_popup:TextureRect
+var game_over_origin:Vector2
+const GAMEOVER_RANDOM_EXTREMES := Vector2(10.0, 10.0)
+var player:Player
 
 var rng := RandomNumberGenerator.new()
 
@@ -29,24 +35,31 @@ func _ready():
     add_child(sleepy_meter)
     sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
     rng.randomize()
+    player = get_node("/root/" + str(get_tree().current_scene.name) + "/Player")
+
+func _process(_delta):
+    if is_game_over:
+        game_over_popup.position = Vector2(
+            game_over_origin.x + randf_range(-GAMEOVER_RANDOM_EXTREMES.x, GAMEOVER_RANDOM_EXTREMES.x),
+            game_over_origin.y + randf_range(-GAMEOVER_RANDOM_EXTREMES.y, GAMEOVER_RANDOM_EXTREMES.y))
+    if Input.get("game_restart") && current_level >= LVLID_LEVELOFFSET:
+        reload_current_level()
+    if Input.get("game_toMenu") && current_level >= LVLID_LEVELOFFSET:
+        load_level_direct(LVLID_MENU)
 
 func load_level_direct(id:int):
     current_level = id
-    print(get_stack())
-    print("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn loading directly")
     reload_current_level()
 
 func load_next_level():
     current_level += 1
-    print(current_level)
-    print("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn")
     reload_current_level()
 
 func reload_current_level():
+    is_game_over = false
     current_floor = FLOOR_TYPE[current_level]
     current_wall = WALL__TYPE[current_level]
     max_sleep()
-    print("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn loading")
     get_tree().change_scene("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn")
 
 func max_sleep():
@@ -60,4 +73,8 @@ func decrease_sleep(prop:String):
     current_sleep -= randi_range(this_range.x, this_range.y)
     sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
     if current_sleep <= 0:
-        pass # Game over code here
+        game_over_popup = game_over_resource.instantiate()
+        if game_over_origin == null:
+            game_over_origin = game_over_popup.position
+        player.controllable = false
+        is_game_over = true
