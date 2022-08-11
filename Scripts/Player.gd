@@ -5,12 +5,14 @@ class_name Player
 var manager:GameManager
 var controllable:bool = true
 const TORQUE := 45
+var audio_prefab:Resource = load("res://scenesAndPrefabs/AudioParent.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
     manager = $"/root/GameManager"
     manager.player = self
-    print(get_tree().current_scene.name)
+    manager.audio = audio_prefab.instantiate()
+    get_node("/root/" + str(get_tree().current_scene.name)).call_deferred("add_child", manager.audio)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
