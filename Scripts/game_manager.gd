@@ -41,9 +41,9 @@ func _process(_delta):
         game_over_popup.position = Vector2(
             game_over_origin.x + randf_range(-GAMEOVER_RANDOM_EXTREMES.x, GAMEOVER_RANDOM_EXTREMES.x),
             game_over_origin.y + randf_range(-GAMEOVER_RANDOM_EXTREMES.y, GAMEOVER_RANDOM_EXTREMES.y))
-    if Input.get("game_restart") && current_level >= LVLID_LEVELOFFSET:
+    if (Input.get_action_raw_strength("game_restart") > 0.5) && (current_level >= LVLID_LEVELOFFSET):
         reload_current_level()
-    if Input.get("game_toMenu") && current_level >= LVLID_LEVELOFFSET:
+    if (Input.get_action_raw_strength("ui_cancel") > 0.5) && (current_level >= LVLID_LEVELOFFSET):
         load_level_direct(LVLID_MENU)
 
 func load_level_direct(id:int):
@@ -73,6 +73,7 @@ func decrease_sleep(prop:String):
     sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
     if current_sleep <= 0:
         game_over_popup = game_over_resource.instantiate()
+        get_node("/root/" + str(get_tree().current_scene.name)).add_child(game_over_popup)
         if game_over_origin == null:
             game_over_origin = game_over_popup.position
         player.controllable = false
