@@ -11,12 +11,16 @@ func _ready():
     game_manager = $"/root/GameManager"
     music = $"Music"
     game_over_music = parse_resource_audio("game_over")
+    music.connect("finished", replay)
 
 func _process(_delta):
     for i in range(self.get_child_count() - 1, 0, -1):
         var this_player:AudioStreamPlayer = self.get_child(i)
         if !this_player.playing:
             self.remove_child(this_player)
+            
+func replay():
+    music.play()
 
 func parse_resource_audio(audio_name:String) -> AudioStream:
     #var new_audio:Resource = load("res://sounds/" + audio_name + ".wav")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://cyhfa817vkl2u"
+path="res://.godot/imported/qubodupPunch02.ogg-c674abd73c8ab5aea7c1ed7cf1cb4e49.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/phys/qubodupPunch02.ogg"
+dest_files=["res://.godot/imported/qubodupPunch02.ogg-c674abd73c8ab5aea7c1ed7cf1cb4e49.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
