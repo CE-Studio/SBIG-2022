@@ -20,6 +20,8 @@ var game_over_popup:TextureRect
 var game_over_origin:Vector2
 const GAMEOVER_RANDOM_EXTREMES := Vector2(10.0, 10.0)
 var player:Player
+var audio:Node
+var audio_prefab:Resource = load("res://scenesAndPrefabs/AudioParent.tscn")
 
 var rng := RandomNumberGenerator.new()
 
@@ -60,6 +62,8 @@ func reload_current_level():
     current_wall = WALL__TYPE[current_level]
     max_sleep()
     get_tree().change_scene("res://scenesAndPrefabs/" + LEVEL_LIST[current_level] + ".tscn")
+    audio = audio_prefab.instantiate()
+    get_node("/root/" + str(get_tree().current_scene.name)).add_child(audio)
 
 func max_sleep():
     current_sleep = SLEEP_LEVEL_MAX
@@ -78,3 +82,4 @@ func decrease_sleep(prop:String):
             game_over_origin = game_over_popup.position
         player.controllable = false
         is_game_over = true
+        audio.set_music(audio.game_over_music)
