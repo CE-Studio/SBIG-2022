@@ -35,7 +35,6 @@ func _ready():
     add_child(sleepy_meter)
     sleepy_meter.text = "" + str(current_sleep) + "/" + str(SLEEP_LEVEL_MAX) + " sleepy"
     rng.randomize()
-    player = get_node("/root/" + str(get_tree().current_scene.name) + "/Player")
 
 func _process(_delta):
     if is_game_over:
