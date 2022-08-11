@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bo08mg67auxp1"]
+[gd_scene load_steps=25 format=3 uid="uid://bo08mg67auxp1"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_xkyx8"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_g1ryf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="9_5h2x2"]
 [ext_resource type="PackedScene" uid="uid://c8d56muunshg2" path="res://scenesAndPrefabs/launcher.tscn" id="10_31cu5"]
 [ext_resource type="PackedScene" uid="uid://dmyut8w0tkc57" path="res://scenesAndPrefabs/figure.tscn" id="11_u8hwd"]
+[ext_resource type="PackedScene" uid="uid://j6ylf74xfjtw" path="res://scenesAndPrefabs/AudioParent.tscn" id="12_tu7bl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdral"]
 
@@ -262,3 +263,5 @@ directionAndSrength = Vector3(0, 100, 100)
 
 [node name="figure" parent="." instance=ExtResource("11_u8hwd")]
 transform = Transform3D(0.859932, 0, -0.510408, 0, 1, 0, 0.510408, 0, 0.859932, -0.351397, 0.236102, -0.127613)
+
+[node name="AudioParent" parent="." instance=ExtResource("12_tu7bl")]
