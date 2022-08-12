@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://yfuxc0l36yh"
+path="res://.godot/imported/spray.ogg-d973ed07f666a737dfb29f9588433d0c.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/phys/spray.ogg"
+dest_files=["res://.godot/imported/spray.ogg-d973ed07f666a737dfb29f9588433d0c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://c4f2rse4ke1v0"
+path="res://.godot/imported/boing.ogg-6d276ec2e2fce53e285304737c56a5cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/phys/boing.ogg"
+dest_files=["res://.godot/imported/boing.ogg-6d276ec2e2fce53e285304737c56a5cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0

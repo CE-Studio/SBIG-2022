@@ -41,6 +41,7 @@ func set_control_state(state:bool):
     controllable = state
     
 func psound(a):
-    aud.shuffle()
-    sfxp.stream = aud[0]
-    sfxp.play()
+    if "floor" in a.name:
+        aud.shuffle()
+        sfxp.stream = aud[0]
+        sfxp.play()
