@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://dduvtl0m7qs3w"]
+[gd_scene load_steps=26 format=3 uid="uid://dduvtl0m7qs3w"]
 
 [ext_resource type="Material" uid="uid://cxkwtx4ghat75" path="res://textures/bedMat.tres" id="1_vqgyh"]
 [ext_resource type="Script" path="res://Scripts/playerOnBed.gd" id="2_0b7u0"]
+[ext_resource type="AudioStream" uid="uid://dkxjuakuy33hr" path="res://sounds/LevelComplete.ogg" id="3_5ehgv"]
 
 [sub_resource type="Image" id="Image_e0hst"]
 data = {
@@ -290,3 +291,6 @@ amount = 64
 explosiveness = 1.0
 process_material = SubResource("ParticlesMaterial_ooeu6")
 draw_pass_1 = SubResource("SphereMesh_1mnmw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("3_5ehgv")

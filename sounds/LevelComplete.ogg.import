@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://dkxjuakuy33hr"
+path="res://.godot/imported/LevelComplete.ogg-e0ffe49cc833c74644dd752c013aa9e7.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/LevelComplete.ogg"
+dest_files=["res://.godot/imported/LevelComplete.ogg-e0ffe49cc833c74644dd752c013aa9e7.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0

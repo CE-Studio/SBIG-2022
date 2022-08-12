@@ -6,6 +6,7 @@ var endLevelAnim:AnimationPlayer
 var endLevelTexture:TextureRect
 var rng := RandomNumberGenerator.new()
 var manager:GameManager
+var sfx:AudioStreamPlayer
 
 var particleTimer := 1.0
 var endedLevel := false
@@ -23,6 +24,7 @@ func _ready():
     connect("body_entered", self.body_entered)
     endLevelAnim = $"../../AnimationPlayer"
     endLevelTexture = $"../../AnimationPlayer/TextureRect"
+    sfx = $"AudioStreamPlayer"
     endLevelTexture.hide()
     rng.randomize()
 
@@ -42,4 +44,5 @@ func body_entered(body:Node3D):
         particle.show()
         endedLevel = true
         endLevelTexture.show()
+        sfx.play()
         endLevelAnim.play(endLevelAnimNames[rng.randi_range(0, 4)])
