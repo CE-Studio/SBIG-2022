@@ -6,9 +6,12 @@ var options_button:TextureButton
 var credits_button:TextureButton
 var quit_button:TextureButton
 
+var youCant
+
 var manager:GameManager
 
 func _ready():
+    youCant = load("res://textures/Screenshot from 2022-08-12 01-59-32.png")
     manager = $"/root/GameManager"
     play_button = $"Play"
     story_button = $"Story"
@@ -31,7 +34,12 @@ func _press_story():
     pass
 
 func _press_options():
-    pass
+    options_button.texture_pressed = youCant
+    options_button.texture_normal = youCant
+    options_button.texture_hover = youCant
+    options_button.texture_focused = youCant
+    options_button.texture_disabled = youCant
+    options_button.position.y -= 100
 
 func _press_credits():
     pass
