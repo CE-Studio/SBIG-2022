@@ -5,6 +5,8 @@ var story_button:TextureButton
 var options_button:TextureButton
 var credits_button:TextureButton
 var quit_button:TextureButton
+var crawling := false
+var storycrawl
 
 var youCant
 
@@ -18,20 +20,22 @@ func _ready():
     options_button = $"Options"
     credits_button = $"Credits"
     quit_button = $"Quit"
+    storycrawl = $"/root/menu/Camera3D/Node3D/Sprite3D"
     play_button.connect("pressed", self._press_play)
     story_button.connect("pressed", self._press_story)
     options_button.connect("pressed", self._press_options)
     credits_button.connect("pressed", self._press_credits)
     quit_button.connect("pressed", self._press_quit)
 
-func _process(_delta):
-    pass
+func _process(delta):
+    if crawling:
+        storycrawl.position.y += (delta / 6)
 
 func _press_play():
     manager.load_level_direct(manager.LVLID_LEVELOFFSET)
 
 func _press_story():
-    pass
+    crawling = true
 
 func _press_options():
     options_button.texture_pressed = youCant

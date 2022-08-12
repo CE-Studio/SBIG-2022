@@ -1,9 +1,10 @@
-[gd_scene load_steps=65 format=3 uid="uid://d0evdljtoym3h"]
+[gd_scene load_steps=66 format=3 uid="uid://d0evdljtoym3h"]
 
 [ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="1_kbyn3"]
 [ext_resource type="PackedScene" uid="uid://ddex1vq654tas" path="res://scenesAndPrefabs/wallWithWindow.tscn" id="2_swj7w"]
 [ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="3_d8luk"]
 [ext_resource type="Material" uid="uid://cxkwtx4ghat75" path="res://textures/bedMat.tres" id="4_1y47c"]
+[ext_resource type="Texture2D" uid="uid://bqx4wjynimjgg" path="res://textures/story.png" id="4_bo0gi"]
 [ext_resource type="Material" uid="uid://cy30ffu1i5cop" path="res://textures/playmat.tres" id="5_60iss"]
 [ext_resource type="Texture2D" uid="uid://bpgmx31ll5bu8" path="res://textures/buttons/Button_Play.png" id="6_gyo0p"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="6_lwn6p"]
@@ -640,6 +641,13 @@ environment = SubResource("Environment_hhdhm")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.745697, -0.114554, 0.656364, -2.12272e-09, 0.985109, 0.171929, -0.666285, -0.128207, 0.734593, 0.483388, 2.00081, 3.05446)
+
+[node name="Node3D" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.661312, 0.750111, 0, -0.750111, 0.661312, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.421, -0.546)
+texture = ExtResource("4_bo0gi")
 
 [node name="Bed" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.35589, 0.497004, -0.379473)
