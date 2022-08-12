@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://bwj5yrr17wep6"
+path="res://.godot/imported/missing (copy).ogg-0d3e7ce9b41483cfba55488f79877bf0.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/missing (copy).ogg"
+dest_files=["res://.godot/imported/missing (copy).ogg-0d3e7ce9b41483cfba55488f79877bf0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0

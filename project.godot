@@ -29,6 +29,11 @@ config/icon="res://icon.png"
 
 GameManager="*res://Scripts/game_manager.gd"
 
+[display]
+
+window/size/viewport_width=1800
+window/size/viewport_height=900
+
 [importer_defaults]
 
 texture={

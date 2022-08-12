@@ -42,6 +42,7 @@ func set_control_state(state:bool):
     
 func psound(a):
     if "floor" in a.name:
-        aud.shuffle()
-        sfxp.stream = aud[0]
+        if manager.current_level != 6:
+            aud.shuffle()
+            sfxp.stream = aud[0]
         sfxp.play()
