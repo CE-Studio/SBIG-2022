@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://bbepsfg052048"
+path="res://.godot/imported/candyland_cronchified.ogg-3a557b4c0bfa9c3739ddd07eb6e3c72e.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/candyland_cronchified.ogg"
+dest_files=["res://.godot/imported/candyland_cronchified.ogg-3a557b4c0bfa9c3739ddd07eb6e3c72e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
