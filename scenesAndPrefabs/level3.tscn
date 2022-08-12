@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://n1782in0gim5"]
+[gd_scene load_steps=32 format=3 uid="uid://n1782in0gim5"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_bvkhl"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="2_ooo5p"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://c8d56muunshg2" path="res://scenesAndPrefabs/launcher.tscn" id="10_1igg4"]
 [ext_resource type="PackedScene" uid="uid://dmyut8w0tkc57" path="res://scenesAndPrefabs/figure.tscn" id="11_0ij8q"]
 [ext_resource type="Texture2D" uid="uid://b8lchqpj1rv1u" path="res://textures/qespace.png" id="12_8bya4"]
-[ext_resource type="AudioStream" uid="uid://bbepsfg052048" path="res://sounds/candyland_cronchified.ogg" id="13_lpecv"]
+[ext_resource type="VideoStream" uid="uid://bbepsfg052048" path="res://sounds/candyland_cronchified.ogv" id="13_0fdm7"]
+[ext_resource type="Material" uid="uid://lodcrjqh5a8d" path="res://textures/pics/paintMat0.tres" id="14_3u0ba"]
+[ext_resource type="ArrayMesh" uid="uid://dggaihl7m7ptb" path="res://models/Picture.obj" id="15_uue3x"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ehxhj"]
 rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
@@ -198,6 +200,15 @@ albedo_texture = ExtResource("12_8bya4")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1n6fu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mhjpe"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q62ct"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_mhjpe")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wwrup"]
 
 [node name="game" type="Node3D"]
 
@@ -544,6 +555,109 @@ transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -23.33
 material_override = SubResource("StandardMaterial3D_kmy6s")
 mesh = SubResource("PlaneMesh_1n6fu")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_lpecv")
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+size = Vector2i(378, 196)
+render_target_update_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -112.0
+offset_right = 192.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("13_0fdm7")
 autoplay = true
+
+[node name="painting" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.4436, 1.73655, 0)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.4436, 1.03124, 7.47183)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting2"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.4436, 2.88678, 9.59429)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting3"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.4436, 0.795232, 15.2241)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting4"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.5454, 1.07624, 12.0216)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting8"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.847392, 2.29491, 16.4563)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting5"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3446, 0.465228, 16.4563)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting6"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
+
+[node name="painting7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8929, -1.1823, 42.4436)
+material_override = ExtResource("14_3u0ba")
+mesh = ExtResource("15_uue3x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="painting7"]
+transform = Transform3D(5.94223e-16, 4.37114e-08, -0.255, 0.311, -4.37114e-08, 0, -1.35942e-08, -1, -1.11464e-08, 2.93998e-09, 0.376833, -0.0672588)
+material_override = SubResource("StandardMaterial3D_q62ct")
+mesh = SubResource("PlaneMesh_wwrup")
+skeleton = NodePath("../..")
