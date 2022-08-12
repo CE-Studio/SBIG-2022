@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bk5jqw0all45l"]
+[gd_scene load_steps=18 format=3 uid="uid://bk5jqw0all45l"]
 
 [ext_resource type="Script" path="res://Scripts/prop_on_ground.gd" id="1_7ggii"]
 [ext_resource type="Material" uid="uid://c2jmy6uslh6sg" path="res://textures/glassmat.tres" id="1_yx172"]
+[ext_resource type="AudioStream" uid="uid://cmevkw63mllvp" path="res://sounds/phys/crash.wav" id="3_doaq6"]
 
 [sub_resource type="Image" id="Image_8c40h"]
 data = {
@@ -212,3 +213,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149162, 0)
 shape = SubResource("BoxShape3D_jyd0s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_doaq6")
+volume_db = 10.0

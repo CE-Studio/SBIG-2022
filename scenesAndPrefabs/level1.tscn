@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcq4xkfwy6u3d"]
+[gd_scene load_steps=23 format=3 uid="uid://dcq4xkfwy6u3d"]
 
 [ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="1_6l0l3"]
 [ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="1_leghm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_es6bq"]
 [ext_resource type="PackedScene" uid="uid://ckhxe488e2cns" path="res://scenesAndPrefabs/painting.tscn" id="8_lye1v"]
 [ext_resource type="Texture2D" uid="uid://b4u28cwt27yd6" path="res://textures/wasd.png" id="9_g6upd"]
+[ext_resource type="AudioStream" uid="uid://bif6gd61jy3ac" path="res://sounds/LevelTheme1.ogg" id="10_c3v7d"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2ncy6"]
 rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
@@ -454,3 +455,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69362, 2.38746, 2.95)
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -0.295802, 0.0765436, -1.22765)
 material_override = SubResource("StandardMaterial3D_yt2no")
 mesh = SubResource("PlaneMesh_run5m")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_c3v7d")
+autoplay = true

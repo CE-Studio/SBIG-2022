@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmyut8w0tkc57"]
+[gd_scene load_steps=6 format=3 uid="uid://dmyut8w0tkc57"]
 
 [ext_resource type="Script" path="res://Scripts/prop_on_ground.gd" id="1_gdn1c"]
 [ext_resource type="Material" uid="uid://crajnpxnorggs" path="res://textures/figMat.tres" id="1_qt71i"]
 [ext_resource type="ArrayMesh" uid="uid://dpbpxxpqo31ws" path="res://models/Figure.obj" id="2_4x3h0"]
+[ext_resource type="AudioStream" uid="uid://bihb02x7b7gxp" path="res://sounds/phys/fig.ogg" id="4_854um"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cy2rn"]
 size = Vector3(0.256771, 0.630382, 0.376091)
@@ -21,3 +22,6 @@ mesh = ExtResource("2_4x3h0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313186, -0.0614665)
 shape = SubResource("BoxShape3D_cy2rn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_854um")
