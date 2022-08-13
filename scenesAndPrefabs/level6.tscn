@@ -1,0 +1,384 @@
+[gd_scene load_steps=33 format=3 uid="uid://5w2xnfe71i2m"]
+
+[ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_cnkyy"]
+[ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="3_ycyd6"]
+[ext_resource type="PhysicsMaterial" uid="uid://c8t7m1e2pa5o2" path="res://ok ok ok ok ok ok ok.tres" id="4_sfrbu"]
+[ext_resource type="Script" path="res://Scripts/campoint.gd" id="5_nc1jm"]
+[ext_resource type="Texture2D" uid="uid://boycoiun8ygp2" path="res://textures/LevelComplete.png" id="7_jmi2i"]
+[ext_resource type="Material" uid="uid://c5b7h06on7m01" path="res://textures/the ending ending/iron.tres" id="11_4uyo7"]
+[ext_resource type="ArrayMesh" uid="uid://0c7r3ba2pmg7" path="res://models/block.obj" id="12_ffbos"]
+[ext_resource type="PackedScene" uid="uid://j6ylf74xfjtw" path="res://scenesAndPrefabs/AudioParent.tscn" id="12_ph2wm"]
+[ext_resource type="Material" uid="uid://bbqmcylnucfmc" path="res://textures/the ending ending/enerStone.tres" id="13_q0i7k"]
+[ext_resource type="Texture2D" uid="uid://10faxfs1e3v1" path="res://textures/snad.png" id="13_q7wte"]
+[ext_resource type="AudioStream" uid="uid://4egcp8s1a1fp" path="res://sounds/stan.ogg" id="14_ibadp"]
+[ext_resource type="Material" uid="uid://bxh8u0bukfrl5" path="res://textures/the ending ending/copper.tres" id="14_tcu2b"]
+[ext_resource type="Texture2D" uid="uid://dy13jkd2xjkfq" path="res://textures/solar.png" id="15_l32g3"]
+[ext_resource type="ArrayMesh" uid="uid://b5uovhhdcwgyc" path="res://models/solar.obj" id="16_lxppf"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ehxhj"]
+rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
+mie_color = Color(0.576471, 0.756863, 0.858824, 1)
+ground_color = Color(0.2, 0.2, 0.2, 1)
+exposure = 0.2
+
+[sub_resource type="Sky" id="Sky_sk4rs"]
+sky_material = SubResource("PhysicalSkyMaterial_ehxhj")
+
+[sub_resource type="Environment" id="Environment_irw53"]
+background_mode = 2
+sky = SubResource("Sky_sk4rs")
+
+[sub_resource type="Animation" id="Animation_8tie7"]
+resource_name = "LC_InFromBottom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(143, 659), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_8igdl"]
+resource_name = "LC_InFromLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-857, 159), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_wq3rl"]
+resource_name = "LC_InFromRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1143, 159), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_gfg2n"]
+resource_name = "LC_InFromTop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(143, -341), Vector2(143, 159)]
+}
+
+[sub_resource type="Animation" id="Animation_36l7p"]
+resource_name = "LC_SpinFadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.28319, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_003fp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(143, 159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:pivot_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(367, 139.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(734, 279)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlfdp"]
+_data = {
+"LC_InFromBottom": SubResource("Animation_8tie7"),
+"LC_InFromLeft": SubResource("Animation_8igdl"),
+"LC_InFromRight": SubResource("Animation_wq3rl"),
+"LC_InFromTop": SubResource("Animation_gfg2n"),
+"LC_SpinFadeIn": SubResource("Animation_36l7p"),
+"RESET": SubResource("Animation_003fp")
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tpose"]
+
+[sub_resource type="VoxelGeneratorNoise" id="VoxelGeneratorNoise_8lt8d"]
+channel = 0
+noise = SubResource("FastNoiseLite_tpose")
+height_start = -30.0
+height_range = 50.0
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_hrqpq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jyk6"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("13_q7wte")
+texture_filter = 0
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_j4j3p"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 0)
+cube_tiles_right = Vector2(0, 0)
+cube_tiles_bottom = Vector2(0, 0)
+cube_tiles_top = Vector2(0, 0)
+cube_tiles_back = Vector2(0, 0)
+cube_tiles_front = Vector2(0, 0)
+material_override_0 = SubResource("StandardMaterial3D_4jyk6")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_b4uvi"]
+atlas_size = 1
+voxels/0 = SubResource("VoxelBlockyModel_hrqpq")
+voxels/1 = SubResource("VoxelBlockyModel_j4j3p")
+
+[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_t5u2m"]
+library = SubResource("VoxelBlockyLibrary_b4uvi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yxis"]
+albedo_texture = ExtResource("15_l32g3")
+texture_filter = 0
+
+[node name="game" type="Node3D"]
+
+[node name="Bed" parent="." instance=ExtResource("1_cnkyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42279, -0.503838, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_ycyd6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89064, 1, 0)
+
+[node name="RigidDynamicBody3D" parent="Player/ThighL" index="0"]
+physics_material_override = ExtResource("4_sfrbu")
+
+[node name="RigidDynamicBody3D" parent="Player/ThighR" index="0"]
+physics_material_override = ExtResource("4_sfrbu")
+
+[node name="RigidDynamicBody3D" parent="Player/UpperarmL" index="0"]
+physics_material_override = ExtResource("4_sfrbu")
+
+[node name="RigidDynamicBody3D" parent="Player/UpperarmR" index="0"]
+physics_material_override = ExtResource("4_sfrbu")
+
+[node name="RigidDynamicBody3D" parent="Player/Head" index="0"]
+physics_material_override = ExtResource("4_sfrbu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.958972, -0.190148, 0.210279, -0.262813, -0.318106, 0.910899, -0.106315, -0.928791, -0.355028, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_irw53")
+
+[node name="campoint" type="Node3D" parent="."]
+transform = Transform3D(0.987136, 0, 0.159881, 0, 1, 0, -0.159881, 0, 0.987136, 0, 0, 0)
+script = ExtResource("5_nc1jm")
+
+[node name="Camera3D" type="Camera3D" parent="campoint"]
+transform = Transform3D(-1, 7.36648e-08, -1.31808e-07, 0, 0.872922, 0.48786, 1.50996e-07, 0.48786, -0.872922, -1.012, 3.423, -7.375)
+
+[node name="VoxelViewer" type="VoxelViewer" parent="campoint/Camera3D"]
+view_distance = 512
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath(".")
+libraries = {
+"": SubResource("AnimationLibrary_jlfdp")
+}
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+anchor_left = 0.016
+anchor_top = 0.028
+anchor_right = 0.98
+anchor_bottom = 0.968
+offset_left = 114.2
+offset_top = 133.8
+offset_right = -887.0
+offset_bottom = -433.2
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(367, 139.5)
+texture = ExtResource("7_jmi2i")
+metadata/_edit_use_custom_anchors = true
+
+[node name="AudioParent" parent="." instance=ExtResource("12_ph2wm")]
+
+[node name="floor" type="VoxelTerrain" parent="."]
+transform = Transform3D(5, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+generator = SubResource("VoxelGeneratorNoise_8lt8d")
+mesher = SubResource("VoxelMesherBlocky_t5u2m")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ibadp")
+volume_db = -10.0
+autoplay = true
+
+[node name="port1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -4.51538, 597.474)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="port1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4yxis")
+mesh = ExtResource("16_lxppf")
+
+[node name="Node3D" type="Node3D" parent="port1"]
+transform = Transform3D(0.996493, -0.0836778, 0, 0.0836778, 0.996493, 0, 0, 0, 1, -3.98428, -0.210133, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="port1/Node3D"]
+material_override = ExtResource("11_4uyo7")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+material_override = ExtResource("11_4uyo7")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+material_override = ExtResource("13_q0i7k")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+material_override = ExtResource("13_q0i7k")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+material_override = ExtResource("14_tcu2b")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+material_override = ExtResource("14_tcu2b")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+material_override = ExtResource("14_tcu2b")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0)
+material_override = ExtResource("13_q0i7k")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = ExtResource("11_4uyo7")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0)
+material_override = ExtResource("11_4uyo7")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0)
+material_override = ExtResource("13_q0i7k")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 0)
+material_override = ExtResource("14_tcu2b")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+material_override = ExtResource("14_tcu2b")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="port1/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+material_override = ExtResource("14_tcu2b")
+mesh = ExtResource("12_ffbos")
+
+[editable path="Player"]

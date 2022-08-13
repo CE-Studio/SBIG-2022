@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://4egcp8s1a1fp"
+path="res://.godot/imported/stan.ogg-b30a09f88851e663da3d239578faec5a.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/stan.ogg"
+dest_files=["res://.godot/imported/stan.ogg-b30a09f88851e663da3d239578faec5a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
