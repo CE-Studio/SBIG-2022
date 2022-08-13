@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbyxeotnkchj6"]
+[gd_scene load_steps=23 format=3 uid="uid://bbyxeotnkchj6"]
 
 [ext_resource type="PackedScene" uid="uid://bkmrvfpslbog4" path="res://scenesAndPrefabs/floor.tscn" id="1_t8lpi"]
 [ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="2_7f0qn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ckhxe488e2cns" path="res://scenesAndPrefabs/painting.tscn" id="9_cktuq"]
 [ext_resource type="PackedScene" uid="uid://bk5jqw0all45l" path="res://scenesAndPrefabs/Glass.tscn" id="10_dcxpw"]
 [ext_resource type="PackedScene" uid="uid://dmyut8w0tkc57" path="res://scenesAndPrefabs/figure.tscn" id="11_1htq5"]
+[ext_resource type="AudioStream" uid="uid://be7mrycfnsvtf" path="res://sounds/LevelTheme2.ogg" id="12_orgwb"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ae16e"]
 rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
@@ -743,10 +744,10 @@ anchor_left = 0.016
 anchor_top = 0.028
 anchor_right = 0.98
 anchor_bottom = 0.968
-offset_left = 143.0
-offset_top = 159.0
-offset_right = 877.0
-offset_bottom = 438.0
+offset_left = 114.2
+offset_top = 133.8
+offset_right = -887.0
+offset_bottom = -433.2
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(367, 139.5)
@@ -856,3 +857,7 @@ transform = Transform3D(0.959432, 0, -0.28194, 0, 1, 0, 0.28194, 0, 0.959432, -1
 
 [node name="Glass7" parent="." instance=ExtResource("10_dcxpw")]
 transform = Transform3D(0.58296, 0, 0.812501, 0, 1, 0, -0.812501, 0, 0.58296, -12.5881, 0.692621, -0.254942)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_orgwb")
+autoplay = true
