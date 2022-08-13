@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://5w2xnfe71i2m"]
+[gd_scene load_steps=38 format=3 uid="uid://5w2xnfe71i2m"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_cnkyy"]
 [ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="3_ycyd6"]
@@ -13,7 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://4egcp8s1a1fp" path="res://sounds/stan.ogg" id="14_ibadp"]
 [ext_resource type="Material" uid="uid://bxh8u0bukfrl5" path="res://textures/the ending ending/copper.tres" id="14_tcu2b"]
 [ext_resource type="Texture2D" uid="uid://dy13jkd2xjkfq" path="res://textures/solar.png" id="15_l32g3"]
+[ext_resource type="PackedScene" path="res://scenesAndPrefabs/the ending ending/derg2.tscn" id="15_s63ho"]
 [ext_resource type="ArrayMesh" uid="uid://b5uovhhdcwgyc" path="res://models/solar.obj" id="16_lxppf"]
+[ext_resource type="Texture2D" uid="uid://dw6j8f6p1d6eb" path="res://textures/Z.png" id="16_vrjgn"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ehxhj"]
 rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
@@ -228,6 +230,26 @@ library = SubResource("VoxelBlockyLibrary_b4uvi")
 albedo_texture = ExtResource("15_l32g3")
 texture_filter = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62yf7"]
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("16_vrjgn")
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_87trg"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -3.0
+initial_velocity_max = 3.0
+tangential_accel_max = 8.0
+scale_min = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_btycj"]
+
 [node name="game" type="Node3D"]
 
 [node name="Bed" parent="." instance=ExtResource("1_cnkyy")]
@@ -381,4 +403,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 material_override = ExtResource("14_tcu2b")
 mesh = ExtResource("12_ffbos")
 
+[node name="derg" parent="port1" instance=ExtResource("15_s63ho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40493, 0, 0)
+
+[node name="bone2" parent="port1/derg/Node2" index="0"]
+transform = Transform3D(0.150171, 0.440989, 0.88486, -0.073786, 0.897512, -0.434772, -0.985903, 0, 0.167319, 0.273964, 0.335642, 0.0150757)
+
+[node name="head" parent="port1/derg/Node2/bone2" index="2"]
+transform = Transform3D(0.912093, 0.0141916, -0.409737, 0.284473, 0.697767, 0.657416, 0.295231, -0.716184, 0.632391, 0, 0.625006, -1.52588e-05)
+
+[node name="larm" parent="port1/derg/Node2/bone2" index="3"]
+transform = Transform3D(0.856518, 0.339149, -0.389042, -0.516113, 0.560599, -0.647576, -0.00152761, 0.755451, 0.655203, -0.229248, 0.379234, 0.119019)
+
+[node name="bone6" parent="port1/derg/Node2/bone2/larm" index="1"]
+transform = Transform3D(0.629128, -0.772224, 0.0886956, 0.75475, 0.579601, -0.307269, 0.185872, 0.260255, 0.94748, -0.125, -0.375015, 0.125)
+
+[node name="rarm" parent="port1/derg/Node2/bone2" index="4"]
+transform = Transform3D(0.997692, -0.0665256, -0.0135993, 0.0665255, 0.91756, 0.391991, -0.0135993, -0.391991, 0.919868, 0.25, 0.625006, 0)
+
+[node name="bone4" parent="port1/derg/Node2/bone2/rarm" index="1"]
+transform = Transform3D(0.999214, 0.0393751, -0.00463279, -0.0393751, 0.971916, -0.232011, -0.00463279, 0.232011, 0.972702, 0.125, -0.375, 0.125)
+
+[node name="rleg" parent="port1/derg/Node2/bone2" index="5"]
+transform = Transform3D(0.776742, -0.04959, -0.627863, -0.523377, 0.503727, -0.687266, 0.350353, 0.862438, 0.365312, 0.125427, 1.14441e-05, -4.57764e-05)
+
+[node name="lleg" parent="port1/derg/Node2/bone2" index="6"]
+transform = Transform3D(0.988145, 0.146771, -0.0450341, -0.0738631, 0.197346, -0.977547, -0.134588, 0.969285, 0.205847, -0.124878, 5.72205e-06, -1.52588e-05)
+
+[node name="bone12" parent="port1/derg/Node2/bone2/lleg" index="1"]
+transform = Transform3D(0.99984, -0.0160342, 0.00787922, 0.0169093, 0.991672, -0.127676, -0.00576641, 0.127788, 0.991785, 0.00012207, -0.4375, -0.125)
+
+[node name="bone13" parent="port1/derg/Node2/bone2/lleg/bone12" index="1"]
+transform = Transform3D(0.999521, -0.0309518, 0.000800587, 0.0224523, 0.74237, 0.669614, -0.0213201, -0.669275, 0.742709, 0, 0.187492, 0.374996)
+
+[node name="bone14" parent="port1/derg/Node2/bone2/lleg/bone12/bone13" index="1"]
+transform = Transform3D(0.999404, -0.034513, 0.000119582, 0.03133, 0.908675, 0.416328, -0.0144774, -0.416076, 0.909215, -0.00012207, -0.4375, -1.52588e-05)
+
+[node name="tail" parent="port1/derg/Node2/bone2" index="7"]
+transform = Transform3D(0.667961, -0.661798, 0.34037, -0.214831, 0.26642, 0.939611, -0.712513, -0.700745, 0.0357833, 0, 0.250008, 0.125)
+
+[node name="tail2" parent="port1/derg/Node2/bone2/tail" index="2"]
+transform = Transform3D(0.78711, -0.615305, -0.0431061, 0.55112, 0.670176, 0.497123, -0.276994, -0.415047, 0.866609, 6.10352e-05, -0.499939, -0.249939)
+
+[node name="tail3" parent="port1/derg/Node2/bone2/tail/tail2" index="2"]
+transform = Transform3D(0.76162, -0.641936, 0.0886101, 0.646446, 0.762163, -0.0348289, -0.0451774, 0.0838081, 0.995456, -0.000183105, -0.5, -9.53674e-06)
+
+[node name="tail4" parent="port1/derg/Node2/bone2/tail/tail2/tail3" index="2"]
+transform = Transform3D(0.516068, -0.856513, -0.00771698, 0.855148, 0.515719, -0.0524954, 0.0489427, 0.0204921, 0.998591, 3.05176e-05, -0.500244, 1.90735e-06)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="port1/derg"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.455566, 1.1489, -0.182068)
+material_override = SubResource("StandardMaterial3D_62yf7")
+lifetime = 3.63
+process_material = SubResource("ParticlesMaterial_87trg")
+draw_pass_1 = SubResource("PlaneMesh_btycj")
+
 [editable path="Player"]
+[editable path="port1/derg"]
