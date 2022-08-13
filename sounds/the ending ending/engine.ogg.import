@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://c01dq72rw7xow"
+path="res://.godot/imported/engine.ogg-e7baed6aea57b58c207e812a463e7f27.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/the ending ending/engine.ogg"
+dest_files=["res://.godot/imported/engine.ogg-e7baed6aea57b58c207e812a463e7f27.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
