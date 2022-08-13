@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4jbdiwm2gpnl"]
+
+[ext_resource type="ArrayMesh" uid="uid://b1k6qfmwrwyff" path="res://models/Mountain.obj" id="1_tlvgd"]
+
+[node name="Mountain" type="Node3D"]
+
+[node name="Mountain" type="MeshInstance3D" parent="."]
+transform = Transform3D(1024, 0, 0, 0, 1024, 0, 0, 0, 1024, 0, 0, 0)
+mesh = ExtResource("1_tlvgd")
