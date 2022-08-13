@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://dj7jg0gomlku3"
+path="res://.godot/imported/LevelTheme5.ogg-00bf1c3782d856d4d3c94b056cb3f29a.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/LevelTheme5.ogg"
+dest_files=["res://.godot/imported/LevelTheme5.ogg-00bf1c3782d856d4d3c94b056cb3f29a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
