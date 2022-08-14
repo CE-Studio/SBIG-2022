@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnnjmkxseja4m"]
+
+[ext_resource type="PackedScene" uid="uid://ddex1vq654tas" path="res://scenesAndPrefabs/wallWithWindow.tscn" id="1_o8mtf"]
+[ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="2_mbhee"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk0ug"]
+albedo_color = Color(0.65098, 0.372549, 0.0509804, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_6ncc8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve4u1"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hdwqj"]
+size = Vector2(7.882, 4.226)
+
+[node name="house" type="Node3D"]
+
+[node name="wallWithWindow" parent="." instance=ExtResource("1_o8mtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="wallWithWindow2" parent="." instance=ExtResource("1_o8mtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="wall" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+
+[node name="wall5" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(2.052, 0, 0, 0, 0.375, 0, 0, 0, 1, 0, 2.54388, 0)
+
+[node name="wall2" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="wall3" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+
+[node name="wall4" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
+
+[node name="wall6" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(-3.49691e-07, 0, 1, 0, 1, 0, -8, 0, -4.37114e-08, -5, 0, -4)
+
+[node name="wall7" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(-3.49691e-07, 0, 1, 0, 1, 0, -8, 0, -4.37114e-08, 5, 0, -4)
+
+[node name="wall8" parent="." instance=ExtResource("2_mbhee")]
+transform = Transform3D(-10, 0, -1.50996e-07, 0, 1, 0, 1.50996e-06, 0, -1, 0, 0, -8)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.989, 0, 0, 0, 2, 0, 0, 0, 8.831, 0, 5, -4)
+material_override = SubResource("StandardMaterial3D_nk0ug")
+mesh = SubResource("PrismMesh_6ncc8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -0.0494523)
+material_override = SubResource("StandardMaterial3D_ve4u1")
+mesh = SubResource("PlaneMesh_hdwqj")
