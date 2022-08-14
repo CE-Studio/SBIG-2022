@@ -1,2 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+/godot.linuxbsd.opt.64
+/godot.windows.opt.64.exe
