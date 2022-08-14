@@ -2,3 +2,5 @@
 .godot/
 /godot.linuxbsd.opt.64
 /godot.windows.opt.64.exe
+/RUN ME.exe
+/RUN ME.x86_64
