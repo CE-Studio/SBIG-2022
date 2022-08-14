@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0ypei651xn04"]
+
+[ext_resource type="Texture2D" uid="uid://mlk8cs16p15" path="res://textures/the ending ending/frig/semaphore.png" id="1_eswot"]
+
+[resource]
+albedo_texture = ExtResource("1_eswot")

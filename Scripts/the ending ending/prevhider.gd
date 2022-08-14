@@ -1,13 +1,13 @@
-extends Node3D
+extends Area3D
 
+@export var toHide:String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    $"Area3D".connect("body_entered", play)
+    connect("body_entered", col)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func play(a):
+func col(a):
     if a.name == "Player":
-        var h = $"AnimationPlayer"
-        h.play("open")
+        get_node(toHide).hide()

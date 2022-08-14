@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://mrq7ajb4dsld"
+path="res://.godot/imported/Door activate.ogg-1dbfe256890aab07d7cac9688be66b81.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/the ending ending/Door activate.ogg"
+dest_files=["res://.godot/imported/Door activate.ogg-1dbfe256890aab07d7cac9688be66b81.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0

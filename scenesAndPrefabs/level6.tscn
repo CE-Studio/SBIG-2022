@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://5w2xnfe71i2m"]
+[gd_scene load_steps=77 format=3 uid="uid://5w2xnfe71i2m"]
 
 [ext_resource type="PackedScene" uid="uid://dduvtl0m7qs3w" path="res://scenesAndPrefabs/Bed.tscn" id="1_cnkyy"]
 [ext_resource type="PackedScene" uid="uid://yjxe7thi5qpy" path="res://scenesAndPrefabs/Player.tscn" id="3_ycyd6"]
@@ -22,6 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://cwxxrly0you4v" path="res://textures/the ending ending/bucket.png" id="19_c2gv2"]
 [ext_resource type="ArrayMesh" uid="uid://di5v6ru17shvq" path="res://models/the ending ending/bucket.obj" id="20_j4643"]
 [ext_resource type="Script" path="res://Scripts/the ending ending/door.gd" id="22_le0f1"]
+[ext_resource type="PackedScene" uid="uid://742rd5q0l3uq" path="res://scenesAndPrefabs/the ending ending/glenn.tscn" id="23_q37fh"]
+[ext_resource type="Material" uid="uid://uof7233m84bf" path="res://textures/the ending ending/frig/bob.tres" id="24_qgj7g"]
+[ext_resource type="Script" path="res://Scripts/the ending ending/looking.gd" id="24_xbj16"]
+[ext_resource type="Material" uid="uid://bm57ellqaivvr" path="res://textures/the ending ending/frig/ground.tres" id="25_5asea"]
+[ext_resource type="Material" uid="uid://b2aoy1eisv1ib" path="res://textures/the ending ending/frig/wallpaint.tres" id="26_jar11"]
+[ext_resource type="Material" uid="uid://c3owe4e88wyt4" path="res://textures/the ending ending/frig/wall.tres" id="27_xswoh"]
+[ext_resource type="Material" uid="uid://i6yrws1gm2rq" path="res://textures/the ending ending/frig/obs.tres" id="28_r0v6k"]
+[ext_resource type="Script" path="res://Scripts/the ending ending/prevhider.gd" id="29_00phs"]
+[ext_resource type="PackedScene" uid="uid://bkpvhwm2xwjpd" path="res://scenesAndPrefabs/the ending ending/frigdoor.tscn" id="30_6u1hh"]
+[ext_resource type="Material" uid="uid://be88b1mftqghn" path="res://textures/the ending ending/frig/box.tres" id="32_0xd01"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ehxhj"]
 rayleigh_color = Color(0.482353, 0.74902, 0.976471, 1)
@@ -495,13 +505,29 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3yvc"]
 size = Vector3(0.175704, 1, 0.201177)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k2c4a"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p0y15"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_voxuj"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_meltw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8cd2"]
+size = Vector3(1, 5.5452, 20.1117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjcw0"]
+size = Vector3(3.37448, 3.89051, 1)
+
 [node name="game" type="Node3D"]
 
 [node name="Bed" parent="." instance=ExtResource("1_cnkyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42279, -0.503838, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_ycyd6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89064, 1, 354.127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3992, 1, 512.459)
 
 [node name="RigidDynamicBody3D" parent="Player/ThighL" index="0"]
 physics_material_override = ExtResource("4_sfrbu")
@@ -548,10 +574,10 @@ anchor_left = 0.016
 anchor_top = 0.028
 anchor_right = 0.98
 anchor_bottom = 0.968
-offset_left = 114.2
-offset_top = 133.8
-offset_right = -887.0
-offset_bottom = -433.2
+offset_left = 143.0
+offset_top = 159.0
+offset_right = 877.0
+offset_bottom = 438.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(367, 139.5)
@@ -834,6 +860,7 @@ script = ExtResource("22_le0f1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/void/door"]
 material_override = SubResource("StandardMaterial3D_wonsu")
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_q5p8e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/void/door"]
@@ -853,10 +880,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0681396, 0.343016, 1.49012e
 shape = SubResource("BoxShape3D_s3yvc")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="part 2/void"]
-transform = Transform3D(9.55343e-14, 2.18557e-06, -60, 50, -2.18557e-06, 0, -2.18557e-06, -50, -2.62268e-06, -52.025, 46, 89.867)
+transform = Transform3D(9.55343e-14, 2.18557e-06, -60, 50, -2.18557e-06, 0, -2.18557e-06, -50, -2.62268e-06, -52.025, 46, 89.67)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/void/StaticBody3D4"]
 material_override = SubResource("StandardMaterial3D_wonsu")
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_q5p8e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/void/StaticBody3D4"]
@@ -864,10 +892,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0490954, 0)
 shape = SubResource("BoxShape3D_eedjs")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="part 2/void"]
-transform = Transform3D(-2.18557e-06, -50, 0, 50, -2.18557e-06, 0, 0, 0, 60, 10.7178, 46, 30.8438)
+transform = Transform3D(-2.18557e-06, -50, 0, 50, -2.18557e-06, 0, 0, 0, 60, 10.718, 46, 29.754)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/void/StaticBody3D2"]
 material_override = SubResource("StandardMaterial3D_wonsu")
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_q5p8e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/void/StaticBody3D2"]
@@ -879,6 +908,7 @@ transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 60, -37.282, -2, 29.681)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/void/floor"]
 material_override = SubResource("StandardMaterial3D_wonsu")
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_q5p8e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/void/floor"]
@@ -886,6 +916,603 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0490954, 0)
 shape = SubResource("BoxShape3D_eedjs")
 
 [node name="frig" type="Node3D" parent="part 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.121021, 0)
+
+[node name="GLeNN" parent="part 2/frig" instance=ExtResource("23_q37fh")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 11.6797, -1.99841, 94.4977)
+
+[node name="Cylinder" parent="part 2/frig/GLeNN/GLeNN/Cube" index="0"]
+script = ExtResource("24_xbj16")
+
+[node name="Cube001" parent="part 2/frig/GLeNN/GLeNN/Cube/Cylinder" index="0"]
+transform = Transform3D(1, -2.31402e-08, 6.62748e-09, 2.31402e-08, 0.848381, -0.529386, 6.62748e-09, 0.529386, 0.848381, 0, 0.279999, -0.33)
+
+[node name="Cube002" parent="part 2/frig/GLeNN/GLeNN/Cube/Cylinder/Cube001" index="0"]
+transform = Transform3D(1, 4.11481e-08, 2.89628e-08, -4.11481e-08, 0.337407, 0.941359, 2.89628e-08, -0.941359, 0.337407, 0, 0.919998, 0.0499992)
+
+[node name="Cube003" parent="part 2/frig/GLeNN/GLeNN/Cube/Cylinder/Cube001/Cube002" index="0"]
+transform = Transform3D(1, 4.24207e-08, 3.31677e-08, -4.24207e-08, 0.241211, 0.970473, 3.31677e-08, -0.970473, 0.241211, 0, 0.860003, -0.0600071)
+
+[node name="Cube004" parent="part 2/frig/GLeNN/GLeNN/Cube/Cylinder/Cube001/Cube002/Cube003" index="0"]
+transform = Transform3D(1, 5.72136e-09, -3.76058e-10, -5.72136e-09, 0.991397, -0.13089, 3.76044e-10, -0.13089, -0.991397, 0, 0.300001, -0.0200005)
+
+[node name="Cube005" parent="part 2/frig/GLeNN/GLeNN/Cube/Cylinder/Cube001/Cube002/Cube003" index="1"]
+transform = Transform3D(1, -5.25741e-09, 3.17321e-10, 5.25741e-09, 0.992741, -0.120275, 3.17321e-10, 0.120275, 0.992741, 0, 0.299999, 0.200001)
+
+[node name="bob" type="Node3D" parent="part 2/frig"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.34768, -0.619331, 104.756)
+script = ExtResource("24_xbj16")
+
+[node name="bob" type="MeshInstance3D" parent="part 2/frig/bob"]
+transform = Transform3D(-0.99269, 0, 0.120691, 0, 1, 0, -0.120691, 0, -0.99269, 0, 0, 0)
+material_override = ExtResource("24_qgj7g")
+mesh = SubResource("CapsuleMesh_k2c4a")
+skeleton = NodePath("../..")
+
+[node name="floor" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, 94)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/floor"]
+material_override = ExtResource("25_5asea")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487251, 0)
+shape = SubResource("BoxShape3D_voxuj")
+
+[node name="floor2" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, 104)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/floor2"]
+material_override = ExtResource("25_5asea")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487251, 0)
+shape = SubResource("BoxShape3D_voxuj")
+
+[node name="floor3" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 104)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/floor3"]
+material_override = ExtResource("25_5asea")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/floor3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487251, 0)
+shape = SubResource("BoxShape3D_voxuj")
+
+[node name="floor4" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 94)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/floor4"]
+material_override = ExtResource("25_5asea")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/floor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487251, 0)
+shape = SubResource("BoxShape3D_voxuj")
+
+[node name="floor5" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, 84)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/floor5"]
+material_override = ExtResource("25_5asea")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/floor5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487251, 0)
+shape = SubResource("BoxShape3D_voxuj")
+
+[node name="floor6" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 84)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/floor6"]
+material_override = ExtResource("25_5asea")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/floor6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487251, 0)
+shape = SubResource("BoxShape3D_voxuj")
+
+[node name="walls" type="StaticBody3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2, 99)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -9)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -9)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -9)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D86" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -11)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D87" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -11)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D88" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -11)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D89" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -13)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D90" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -13)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D91" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -13)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -7)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -5)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -3)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, -1)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, -1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, -1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, 1)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, 1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, 1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, 3)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, 3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, 3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, 5)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, 5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, 5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, 7)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, 7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, 7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D55" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 1, 9)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D56" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 3, 9)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D57" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 9, 5, 9)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 8, 1, 10)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 8, 3, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D30" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 8, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D33" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 6, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D36" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 4, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D37" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 2, 1, 10)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D38" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 2, 3, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D39" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 2, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D40" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 0, 1, 10)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D41" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 0, 3, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D42" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, 0, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D43" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -2, 1, 10)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D44" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -2, 3, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D45" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -2, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D46" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -4, 1, 10)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D47" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -4, 3, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D48" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -4, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D49" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -6, 1, 10)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D50" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -6, 3, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D51" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, -1, 4.37114e-08, -6, 5, 10)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D52" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, 9)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D53" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, 9)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D54" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, 9)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D58" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, 7)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D59" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, 7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D60" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, 7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D61" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, 5)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D62" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, 5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D63" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, 5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D64" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, 3)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D65" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, 3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D66" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, 3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D67" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, 1)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D68" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, 1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D69" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, 1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D70" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, -1)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D71" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, -1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D72" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, -1)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D73" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, -3)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D74" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, -3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D75" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, -3)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D76" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, -5)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D77" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, -5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D78" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, -5)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D79" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 1, -7)
+material_override = ExtResource("26_jar11")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D80" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 3, -7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D81" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -1, 8.74228e-08, 4.37114e-08, -7, 5, -7)
+material_override = ExtResource("27_xswoh")
+mesh = SubResource("PlaneMesh_meltw")
+
+[node name="MeshInstance3D82" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -2, 6, -4)
+material_override = ExtResource("28_r0v6k")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="MeshInstance3D83" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -2, 6, 6)
+material_override = ExtResource("28_r0v6k")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="MeshInstance3D84" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 8, 6, 6)
+material_override = ExtResource("28_r0v6k")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="MeshInstance3D85" type="MeshInstance3D" parent="part 2/frig/walls"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 8, 6, -4)
+material_override = ExtResource("28_r0v6k")
+mesh = SubResource("PlaneMesh_p0y15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.39251, 2.73061, 0)
+shape = SubResource("BoxShape3D_c8cd2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="part 2/frig/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19753e-05, 2.73061, 0)
+shape = SubResource("BoxShape3D_c8cd2")
+
+[node name="prevhider" type="Area3D" parent="part 2/frig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3258, 0, 92.209)
+script = ExtResource("29_00phs")
+toHide = "/root/game/part 2/void"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="part 2/frig/prevhider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179999, -0.217731, 0.114571)
+shape = SubResource("BoxShape3D_pjcw0")
+
+[node name="frigdoor" parent="part 2/frig" instance=ExtResource("30_6u1hh")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 9, -2, 109)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(0.962337, 0, -0.27186, 0, 1, 0, 0.27186, 0, 0.962337, 11.0129, -1.50439, 98.6215)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(0.994209, 0, 0.107461, 0, 1, 0, -0.107461, 0, 0.994209, 11.0129, -1.50439, 99.8697)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(0.846546, 0, 0.532315, 0, 1, 0, -0.532315, 0, 0.846546, 11.5232, -1.50439, 106.221)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(1.69309, 0, 1.06463, 0, 2, 0, -1.06463, 0, 1.69309, 0.889198, -1.00151, 102.894)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(1.79327, 0, -0.885548, 0, 2, 0, 0.885548, 0, 1.79327, 0.220332, -1.00151, 98.7146)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(1.79327, 0, -0.885548, 0, 2, 0, 0.885548, 0, 1.79327, -0.0616488, -1.00151, 106.075)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(1.97636, 0, 0.306627, 0, 2, 0, -0.306627, 0, 1.97636, -0.0616488, 0.998024, 106.075)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="part 2/frig"]
+transform = Transform3D(0.746754, 0, 0.6651, 0, 1, 0, -0.6651, 0, 0.746754, 11.0129, -0.501911, 99.1587)
+material_override = ExtResource("32_0xd01")
+mesh = ExtResource("12_ffbos")
 
 [editable path="Player"]
 [editable path="port1/derg"]
+[editable path="part 2/frig/GLeNN"]
