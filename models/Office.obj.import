@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://31wvsqs0v62o"
+path="res://.godot/imported/Office.obj-9314001ea509d15b7990de8e2eab6df3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Office.obj-9314001ea509d15b7990de8e2eab6df3.mesh"]
+
+source_file="res://models/Office.obj"
+dest_files=["res://.godot/imported/Office.obj-9314001ea509d15b7990de8e2eab6df3.mesh", "res://.godot/imported/Office.obj-9314001ea509d15b7990de8e2eab6df3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

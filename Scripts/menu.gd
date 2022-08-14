@@ -33,7 +33,7 @@ func _process(delta):
 
 func _press_play():
     manager.load_level_direct(manager.LVLID_LEVELOFFSET)
-    #manager.load_level_direct(6)
+    #manager.load_level_direct(8)
 
 func _press_story():
     crawling = true
