@@ -1,5 +1,6 @@
 extends Node3D
 
+var opened := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,5 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func play(a):
     if a.name == "Player":
-        var h = $"AnimationPlayer"
-        h.play("open")
+        if !opened:
+            var h = $"AnimationPlayer"
+            h.play("open")
+            opened = true
