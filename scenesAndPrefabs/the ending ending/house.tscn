@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnnjmkxseja4m"]
+[gd_scene load_steps=13 format=3 uid="uid://cnnjmkxseja4m"]
 
 [ext_resource type="PackedScene" uid="uid://ddex1vq654tas" path="res://scenesAndPrefabs/wallWithWindow.tscn" id="1_o8mtf"]
 [ext_resource type="PackedScene" uid="uid://ciierwgvddicp" path="res://scenesAndPrefabs/wall.tscn" id="2_mbhee"]
+[ext_resource type="PackedScene" uid="uid://bohrj7fknb8vu" path="res://scenesAndPrefabs/the ending ending/fence.tscn" id="3_m5tuk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk0ug"]
 albedo_color = Color(0.65098, 0.372549, 0.0509804, 1)
@@ -13,6 +14,21 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hdwqj"]
 size = Vector2(7.882, 4.226)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj7vb"]
+albedo_color = Color(0, 0.384314, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mb2jg"]
+size = Vector3(18, 1, 28)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xntsx"]
+albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17n3q"]
+size = Vector3(18, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptjbr"]
+size = Vector3(18, 1, 32)
 
 [node name="house" type="Node3D"]
 
@@ -55,3 +71,92 @@ mesh = SubResource("PrismMesh_6ncc8")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -0.0494523)
 material_override = SubResource("StandardMaterial3D_ve4u1")
 mesh = SubResource("PlaneMesh_hdwqj")
+
+[node name="fence" parent="." instance=ExtResource("3_m5tuk")]
+
+[node name="fence5" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3)
+
+[node name="fence6" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 6)
+
+[node name="fence13" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 9)
+
+[node name="fence18" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -9)
+
+[node name="fence19" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -9)
+
+[node name="fence20" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, -9)
+
+[node name="fence21" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -9)
+
+[node name="fence22" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -9)
+
+[node name="fence23" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, -9)
+
+[node name="fence14" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 9)
+
+[node name="fence17" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -2, 0, 9)
+
+[node name="fence15" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 9)
+
+[node name="fence16" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 9)
+
+[node name="fence2" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3)
+
+[node name="fence3" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -6)
+
+[node name="fence4" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -9)
+
+[node name="fence7" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="fence8" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
+
+[node name="fence9" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+
+[node name="fence10" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3)
+
+[node name="fence11" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
+
+[node name="fence12" parent="." instance=ExtResource("3_m5tuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -9)
+
+[node name="floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_sj7vb")
+mesh = SubResource("BoxMesh_mb2jg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 15)
+material_override = SubResource("StandardMaterial3D_xntsx")
+mesh = SubResource("BoxMesh_17n3q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.458101, 5)
+material_override = SubResource("StandardMaterial3D_xntsx")
+mesh = SubResource("BoxMesh_17n3q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ptjbr")

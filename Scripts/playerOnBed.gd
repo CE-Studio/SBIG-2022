@@ -25,6 +25,10 @@ func _ready():
     endLevelAnim = $"../../AnimationPlayer"
     endLevelTexture = $"../../AnimationPlayer/TextureRect"
     sfx = $"AudioStreamPlayer"
+    if player == null:
+        player = $"/root/game/Player"
+        endLevelAnim = $"/root/game/AnimationPlayer"
+        endLevelTexture = $"/root/game/AnimationPlayer/TextureRect"
     endLevelTexture.hide()
     rng.randomize()
 
