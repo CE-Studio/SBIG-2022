@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c8d56muunshg2" path="res://scenesAndPrefabs/launcher.tscn" id="10_1igg4"]
 [ext_resource type="PackedScene" uid="uid://dmyut8w0tkc57" path="res://scenesAndPrefabs/figure.tscn" id="11_0ij8q"]
 [ext_resource type="Texture2D" uid="uid://b8lchqpj1rv1u" path="res://textures/qespace.png" id="12_8bya4"]
-[ext_resource type="VideoStream" uid="uid://bbepsfg052048" path="res://sounds/candyland_cronchified.ogv" id="13_0fdm7"]
+[ext_resource type="VideoStream" path="res://sounds/candyland_cronchified.ogv" id="13_0fdm7"]
 [ext_resource type="Material" uid="uid://lodcrjqh5a8d" path="res://textures/pics/paintMat0.tres" id="14_3u0ba"]
 [ext_resource type="ArrayMesh" uid="uid://dggaihl7m7ptb" path="res://models/Picture.obj" id="15_uue3x"]
 
@@ -286,10 +286,10 @@ anchor_left = 0.016
 anchor_top = 0.028
 anchor_right = 0.98
 anchor_bottom = 0.968
-offset_left = 143.0
-offset_top = 159.0
-offset_right = 877.0
-offset_bottom = 438.0
+offset_left = 114.2
+offset_top = 133.8
+offset_right = -887.0
+offset_bottom = -433.2
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(367, 139.5)
@@ -572,6 +572,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("13_0fdm7")
+volume_db = -5.0
 autoplay = true
 
 [node name="painting" type="MeshInstance3D" parent="."]
