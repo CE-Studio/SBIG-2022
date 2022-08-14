@@ -1,8 +1,8 @@
 extends Node
 
-const LEVEL_LIST := ["game", "menu", "rundown", "level1", "level2", "level3", "level4", "level5", "level6"]
-const FLOOR_TYPE := [0, 0, 0, 0, 0, 0, 0, 0, 0]
-const WALL__TYPE := [0, 0, 0, 0, 0, 0, 0, 0, 0]
+const LEVEL_LIST := ["game", "menu", "rundown", "level1", "level2", "level3", "level4", "level5", "level6", "the_real_ending_ending"]
+const FLOOR_TYPE := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+const WALL__TYPE := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 const LVLID_MENU := 1
 const LVLID_RUNDOWN := 2
 const LVLID_LEVELOFFSET := 3

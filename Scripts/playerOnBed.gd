@@ -45,8 +45,12 @@ func body_entered(body:Node3D):
     if body.name == "Player" && !endedLevel:
         print("Level complete")
         player.set_control_state(false)
-        particle.show()
         endedLevel = true
-        endLevelTexture.show()
-        sfx.play()
-        endLevelAnim.play(endLevelAnimNames[rng.randi_range(0, 4)])
+        if manager.current_level == 8:
+            particleTimer = 7
+            $"/root/game/campoint/Camera3D/AnimationPlayer".play("beginning of the end")
+        else:
+            particle.show()
+            endLevelTexture.show()
+            sfx.play()
+            endLevelAnim.play(endLevelAnimNames[rng.randi_range(0, 4)])
